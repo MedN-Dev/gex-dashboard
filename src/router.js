@@ -7,13 +7,11 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: () => import("./components/Header/Home.vue")
+      component: () => import("./components/Home.vue")
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("./components/Header/About.vue")
+      path: "/users",
+      component: () => import("./components/About.vue")
     }
   ]
 });
