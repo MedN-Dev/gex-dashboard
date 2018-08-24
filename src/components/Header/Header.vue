@@ -9,8 +9,8 @@
 export default {
   name: "Header",
   components: {
-    Logo: () => import("./Logo.vue"),
-    Nav: () => import("./Nav.vue")
+    Logo: () => import("./HeaderLogo.vue"),
+    Nav: () => import("./HeaderNav.vue")
   }
 };
 </script>
