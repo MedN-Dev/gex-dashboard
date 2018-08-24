@@ -29,11 +29,11 @@ export default {
 
     letter-spacing: 0.5px;
     &:hover {
-      color: #1880e7;
+      color: #0077ff;
     }
     &_active {
-      border-bottom: 2px solid #1880e7;
-      color: #1880e7;
+      border-bottom: 2px solid #0077ff;
+      color: #0077ff;
     }
   }
 }

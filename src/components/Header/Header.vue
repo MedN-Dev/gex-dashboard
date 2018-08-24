@@ -24,5 +24,6 @@ export default {
   background-color: white;
   width: 1580px;
   height: 70px;
+  border-bottom: 1px solid #ebedf8;
 }
 </style>
