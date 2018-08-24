@@ -6,7 +6,6 @@
     </div>
     <div class="sidebar__item forum">
       <i class="material-icons">forum</i>
-      <span class="forum-text">not working</span>
     </div>
     <div class="sidebar__item">
       <i class="material-icons">cloud</i>
@@ -56,18 +55,5 @@ export default {
 .dashboard {
   border-right: 3px solid #0077ff;
   color: #0077ff;
-}
-
-.forum-text {
-  font-size: 10px;
-  display: none;
-}
-
-.forum {
-  transition-duration: 2s;
-}
-.forum:hover .forum-text {
-  display: flex;
-
 }
 </style>
