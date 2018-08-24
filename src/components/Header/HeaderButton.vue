@@ -30,6 +30,9 @@ export default {
     cursor: pointer;
     outline: none;
     letter-spacing: 0.5px;
+    &:hover {
+      box-shadow: 0px 0px 10px 0px #9ea7fc;
+    }
   }
 }
 </style>
