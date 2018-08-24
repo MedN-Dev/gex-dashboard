@@ -1,7 +1,8 @@
 <template>
   <div class="header">
-    <Logo/>
-    <Nav/>
+    <HeaderLogo/>
+    <HeaderNav/>
+    <HeaderButton/>
   </div>
 </template>
 
@@ -9,8 +10,9 @@
 export default {
   name: "Header",
   components: {
-    Logo: () => import("./HeaderLogo.vue"),
-    Nav: () => import("./HeaderNav.vue")
+    HeaderLogo: () => import("./HeaderLogo.vue"),
+    HeaderNav: () => import("./HeaderNav.vue"),
+    HeaderButton: () => import("./HeaderButton.vue")
   }
 };
 </script>
