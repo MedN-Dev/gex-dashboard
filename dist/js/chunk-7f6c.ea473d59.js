@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-7f6c"],{"0e53":function(e,n,t){"use strict";t.r(n);var o=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._v("\n  Footer\n")])},i=[],r={name:"MainOverviewFooter"},a=r,c=(t("8f4a"),t("2877")),u=Object(c["a"])(a,o,i,!1,null,"451453fd",null);u.options.__file="MainOverviewFooter.vue";n["default"]=u.exports},6168:function(e,n,t){},"8f4a":function(e,n,t){"use strict";var o=t("6168"),i=t.n(o);i.a}}]);
+//# sourceMappingURL=chunk-7f6c.ea473d59.js.map
