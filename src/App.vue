@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <Header/>
+    <TheHeader/>
     <div class="main-wrapper">
-      <Sidebar/>
-      <Main/>
+      <TheSidebar/>
+      <TheMain/>
     </div>
   </div>
 </template>
@@ -11,9 +11,9 @@
 <script>
 export default {
   components: {
-    Header: () => import("./components/Header/Header.vue"),
-    Sidebar: () => import("./components/Sidebar/Sidebar.vue"),
-    Main: () => import("./components/Main/Main.vue")
+    TheHeader: () => import("./components/Header/TheHeader.vue"),
+    TheSidebar: () => import("./components/Sidebar/TheSidebar.vue"),
+    TheMain: () => import("./components/Main/TheMain.vue")
   }
 };
 </script>

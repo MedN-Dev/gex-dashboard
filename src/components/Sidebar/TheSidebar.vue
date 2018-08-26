@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "Sidebar"
+  name: "TheSidebar"
 };
 </script>
 

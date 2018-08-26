@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "TheHeader",
   components: {
     HeaderLogo: () => import("./HeaderLogo.vue"),
     HeaderNav: () => import("./HeaderNav.vue"),
