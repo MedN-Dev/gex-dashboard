@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
+    width: 85px;
     height: 70px;
     &__wrapper {
       position: relative;

@@ -20,7 +20,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1395px;
+  width: 1402px;
   height: 90px;
   margin: 0 auto;
   &__title {

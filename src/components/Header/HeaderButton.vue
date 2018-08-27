@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .button-wrapper {
-  width: 700px;
+  width: 705px;
   display: flex;
   justify-content: flex-end;
   &__btn {

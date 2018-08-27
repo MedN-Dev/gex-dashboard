@@ -15,14 +15,14 @@ export default {
 <style lang="scss" scoped>
 .nav {
   display: flex;
-  justify-content: center;
-  width: 760px;
+  justify-content: flex-end;
+  width: 745px;
   &__link {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70px;
-    margin: 0 30px;
+    margin: 0 55px;
     text-decoration: none;
     color: #8a96a0;
     font-size: 15px;
