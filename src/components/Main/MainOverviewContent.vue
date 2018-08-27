@@ -4,6 +4,7 @@
       <MainOverviewContentChartRegDev/>
       <MainOverviewContentChartCountry/>
     </div>
+    <MainOverviewContentUserList/>
   </div>
 </template>
 
@@ -14,7 +15,9 @@ export default {
     MainOverviewContentChartRegDev: () =>
       import("./MainOverviewContentChartRegDev.vue"),
     MainOverviewContentChartCountry: () =>
-      import("./MainOverviewContentChartCountry.vue")
+      import("./MainOverviewContentChartCountry.vue"),
+    MainOverviewContentUserList: () =>
+      import("./MainOverviewContentUserList.vue")
   }
 };
 </script>
