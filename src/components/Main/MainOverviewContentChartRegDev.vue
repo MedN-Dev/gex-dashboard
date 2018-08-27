@@ -1,0 +1,17 @@
+<template>
+  <div class="chart"></div>
+</template>
+
+<script>
+export default {
+  name: "MainOverviewContentChartRegDev"
+};
+</script>
+
+<style lang="scss" scoped>
+.chart {
+  width: 549px;
+  border-right: 1px solid #ebedf8;
+  border-bottom: 1px solid #ebedf8;
+}
+</style>

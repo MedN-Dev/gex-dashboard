@@ -29,7 +29,8 @@ export default {
     color: #1a173b;
   }
   &__left {
-    background-color: yellowgreen;
+    background-color: pink;
+    opacity: 0.5;
   }
 }
 </style>

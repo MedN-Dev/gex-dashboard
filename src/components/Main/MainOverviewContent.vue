@@ -1,23 +1,35 @@
 <template>
   <div class="overview-content">
-    Content
+    <div class="overview-content__charts">
+      <MainOverviewContentChartRegDev/>
+      <MainOverviewContentChartCountry/>
+    </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: "MainOverviewContent"
-  };
+export default {
+  name: "MainOverviewContent",
+  components: {
+    MainOverviewContentChartRegDev: () =>
+      import("./MainOverviewContentChartRegDev.vue"),
+    MainOverviewContentChartCountry: () =>
+      import("./MainOverviewContentChartCountry.vue")
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-  .overview-content {
-    width: 1401px;
-    height: 739px;
-    border-radius: 4px;
-    border: 1px solid #ebedf8;
-    background-color: #ffffff;
-    margin: 0 auto;
+.overview-content {
+  width: 1401px;
+  height: 739px;
+  border-radius: 4px;
+  border: 1px solid #ebedf8;
+  background-color: #ffffff;
+  margin: 0 auto;
+  &__charts {
+    display: flex;
+    height: 270px;
   }
-
+}
 </style>
