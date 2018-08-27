@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-6123"],{"1d5d":function(e,n,a){"use strict";a.r(n);var i=function(){var e=this,n=e.$createElement,a=e._self._c||n;return a("div",[e._v("\n  Header\n")])},t=[],r={name:"MainOverviewHeader"},u=r,c=(a("34b3"),a("2877")),o=Object(c["a"])(u,i,t,!1,null,"5b3951d3",null);o.options.__file="MainOverviewHeader.vue";n["default"]=o.exports},"34b3":function(e,n,a){"use strict";var i=a("ba81"),t=a.n(i);t.a},ba81:function(e,n,a){}}]);
-//# sourceMappingURL=chunk-6123.c18f4436.js.map
