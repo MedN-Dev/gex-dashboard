@@ -37,7 +37,8 @@ export default {
   height: auto;
   background-color: white;
   width: 85px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.2);
+  border-right: 1px solid #ebedf8;
   &__bs {
     height: 50px;
   }

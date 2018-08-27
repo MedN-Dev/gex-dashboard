@@ -24,8 +24,6 @@ export default {
 #app {
   margin: 100px auto 0 auto;
   width: 1580px;
-  height: 70px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .main-wrapper {

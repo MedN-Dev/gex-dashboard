@@ -15,6 +15,6 @@ export default {
   width: 1495px;
   height: auto;
   background-color: #fafbfc;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 </style>
