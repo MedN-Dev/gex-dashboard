@@ -94,13 +94,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   margin-left: -1px;
-  color: #0077ff;
+  color: #8a96a0;
   background-color: white;
   border: 1px solid #ebedf8;
   text-decoration: none;
+  font-size: 15px;
 }
 .page-link:hover {
   z-index: 1;
@@ -128,7 +129,7 @@ export default {
   border-color: #0077ff;
 }
 .page-item.disabled .page-link {
-  color: #8a96a0;
+  color: #b4bac6;
   pointer-events: none;
   cursor: auto;
   background-color: white;

@@ -15,7 +15,7 @@
         :total="totalUsers"
       />
       <div class="footer__info">
-        Showing <b>{{ usersPerPage }}</b> of <b>{{ totalUsers }}</b> users
+        Showing <b>{{ usersPerPage }}</b> of <b>{{ totalUsers }}</b> users 🚀
       </div>
     </div>
   </div>
@@ -84,11 +84,10 @@ export default {
       flex-direction: column;
       margin: 40px;
       .loading {
-        margin: 150px auto 0 auto;
+        margin: 0 auto;
         font-size: 12px;
         color: white;
-        background-color: #f0166d;
-        opacity: 0.5;
+        background-color: #0077ff;
         padding: 2px 5px;
         border-radius: 2px;
       }

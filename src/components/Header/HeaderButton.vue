@@ -20,12 +20,11 @@ export default {
   &__btn {
     display: flex;
     align-items: center;
-    height: 35px;
+    padding: 9px 15px;
     border-radius: 4px;
     background-color: #0077ff;
     color: white;
     font-size: 14px;
-    padding: 0 10px;
     border: none;
     cursor: pointer;
     outline: none;

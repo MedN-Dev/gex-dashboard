@@ -54,15 +54,11 @@ export default {
   margin: 0 auto;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
   &__btn {
-    display: flex;
-    align-items: center;
-    height: 35px;
-    width: 55px;
+    padding: 8px 15px;
     border-radius: 4px;
     background-color: #0077ff;
     color: white;
     font-size: 14px;
-    padding: 0 10px;
     border: none;
     cursor: pointer;
     outline: none;

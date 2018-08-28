@@ -46,8 +46,7 @@ export default {
   &_error {
     font-size: 9px;
     color: white;
-    background-color: #f0166d;
-    opacity: 0.5;
+    background-color: #0077ff;
     padding: 2px 5px;
     border-radius: 2px;
   }
