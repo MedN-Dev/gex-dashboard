@@ -1,13 +1,17 @@
 <template>
   <div class="overview-footer">
     <div class="overview-footer__info">Showing <b>1</b> to <b>20</b> of 25 users</div>
-    <div class="overview-footer__pagination">pagination</div>
+   <MainOverviewFooterPagination/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MainOverviewFooter"
+  name: "MainOverviewFooter",
+  components: {
+    MainOverviewFooterPagination: () =>
+      import("./MainOverviewFooterPagination.vue")
+  }
 };
 </script>
 
