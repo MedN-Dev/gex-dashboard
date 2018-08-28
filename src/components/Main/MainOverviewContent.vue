@@ -26,7 +26,6 @@ export default {
 .overview-content {
   width: 1401px;
   border-radius: 4px;
-  /*border: 1px solid #ebedf8;*/
   background-color: #ffffff;
   margin: 0 auto;
   &__charts {
