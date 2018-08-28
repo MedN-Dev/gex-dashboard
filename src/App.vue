@@ -93,7 +93,6 @@ export default {
 }
 .main-wrapper {
   display: flex;
-  max-height: 950px;
   margin-bottom: 100px;
 }
 </style>

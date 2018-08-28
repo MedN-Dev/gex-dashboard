@@ -12,6 +12,7 @@ export default {
 .chart {
   width: 549px;
   border-right: 1px solid #ebedf8;
-  border-bottom: 1px solid #ebedf8;
+  border-left: 1px solid #ebedf8;
+  border-top: 1px solid #ebedf8;
 }
 </style>

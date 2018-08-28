@@ -2,7 +2,7 @@
   <div class="overview">
     <MainOverviewHeader/>
     <MainOverviewContent/>
-    <MainOverviewFooter/>
+
   </div>
 </template>
 
@@ -11,8 +11,7 @@ export default {
   name: "MainOverview",
   components: {
     MainOverviewHeader: () => import("./MainOverviewHeader.vue"),
-    MainOverviewContent: () => import("./MainOverviewContent.vue"),
-    MainOverviewFooter: () => import("./MainOverviewFooter.vue")
+    MainOverviewContent: () => import("./MainOverviewContent.vue")
   }
 };
 </script>
