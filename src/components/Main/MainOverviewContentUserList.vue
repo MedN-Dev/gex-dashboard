@@ -9,14 +9,14 @@
   </div>
   <div class="main-content__footer">
     <div class="footer">
-      <div class="footer__info">
-        Showing <b>1</b> to <b>20</b> of {{ totalUsers }} users
-      </div>
       <MainOverviewFooterPagination
         v-model.number="selectedPage"
         :per-page="usersPerPage"
         :total="totalUsers"
       />
+      <div class="footer__info">
+        Showing <b>{{ usersPerPage }}</b> of <b>{{ totalUsers }}</b> users
+      </div>
     </div>
   </div>
 </div>

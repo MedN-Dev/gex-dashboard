@@ -87,16 +87,18 @@ export default {
   display: flex;
   padding-left: 0;
   list-style: none;
-  border-radius: 0.25rem;
+  border-radius: 3px;
 }
 .page-link {
   position: relative;
-  display: block;
-  padding: 0.5rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
   margin-left: -1px;
-  line-height: 1.25;
   color: #0077ff;
-  background-color: #fff;
+  background-color: white;
   border: 1px solid #ebedf8;
   text-decoration: none;
 }
@@ -112,12 +114,12 @@ export default {
 }
 .page-item:first-child .page-link {
   margin-left: 0;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .page-item:last-child .page-link {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .page-item.active .page-link {
   z-index: 1;
