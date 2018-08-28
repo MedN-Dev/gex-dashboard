@@ -4,13 +4,15 @@
     <div class="user-list">
       <div class="user-list__title">All users in system</div>
       <div v-if="loadingUsers" class="loading">Loading...</div>
-      <MainOverviewContentUsers v-else :users="users"/>
+      <MainOverviewContentUsers v-else :users="filteredRows"/>
     </div>
   </div>
   <div class="main-content__footer">
     <div class="footer">
       <div class="footer__info">Showing <b>1</b> to <b>20</b> of 25 users</div>
-      <MainOverviewFooterPagination/>
+      <MainOverviewFooterPagination v-model.number="selectedPage"
+                                    :per-page="rowsPerPage"
+                                    :total="totalRows"/>
     </div>
   </div>
 </div>
@@ -29,8 +31,27 @@ export default {
   data() {
     return {
       users: [],
-      loadingUsers: true
+      loadingUsers: true,
+      rowsPerPage: 2,
+      selectedPage: 1
     };
+  },
+  computed: {
+    totalRows() {
+      return this.users.length;
+    },
+    filteredRows() {
+      return this.users.filter((item, index) => {
+        const startIndex = (this.selectedPage - 1) * this.rowsPerPage;
+        const finalIndex = startIndex + this.rowsPerPage;
+        return startIndex <= index && index < finalIndex;
+      });
+    }
+  },
+  watch: {
+    rowsPerPage() {
+      this.selectedPage = 1;
+    }
   },
   mounted() {
     this.loadUsers();
