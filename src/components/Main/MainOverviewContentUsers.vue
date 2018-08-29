@@ -63,6 +63,12 @@ export default {
     text-transform: uppercase;
     letter-spacing: 1.49px;
   }
+  .color {
+    color: #8a96a0;
+  }
+  .color-main {
+    color: #1a173b;
+  }
   .item {
     padding: 15px 0;
     font-size: 15px;
@@ -91,12 +97,6 @@ export default {
         box-shadow: 0px 0px 6px 0px #f0166d;
       }
     }
-  }
-  .color {
-    color: #8a96a0;
-  }
-  .color-main {
-    color: #1a173b;
   }
 }
 </style>

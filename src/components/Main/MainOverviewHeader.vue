@@ -8,7 +8,7 @@
         <div class="progress-bar" :style="getProgress"></div>
       </div>
       <div class="progress-text">
-        guys <b>{{ this.$store.getters.users.length }}</b> users left
+        in system <b>{{ this.$store.getters.users.length }}</b> users left
       </div>
     </div>
   </div>
