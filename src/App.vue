@@ -40,7 +40,7 @@ export default {
 @import "./assets/reset/reset.css";
 
 #app {
-  margin: 50px 150px;
+  margin: 50px auto;
   width: 1580px;
 }
 .modal {

@@ -19,9 +19,8 @@
         :total="totalUsers"
       />
       <div class="footer__info">
-        <div></div>
         <a href="https://github.com/heysafronov/gex-dashboard" target="_blank">
-          <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">
+          <img src="http://safronov.io/trash/gh.png">
         </a>
       </div>
     </div>
@@ -35,8 +34,7 @@ import axios from "../../api/axios.js";
 export default {
   name: "MainOverviewContentUserList",
   components: {
-    MainOverviewContentUsers: () =>
-      import("./MainOverviewContentUsers.vue"),
+    MainOverviewContentUsers: () => import("./MainOverviewContentUsers.vue"),
     MainOverviewFooterPagination: () =>
       import("./MainOverviewContentPagination.vue")
   },
@@ -120,15 +118,8 @@ export default {
         display: flex;
         color: #1a173b;
         font-size: 15px;
-        div {
-          width: 15px;
-          height: 15px;
-          background-color: #0077ff;
-          border-radius: 15px;
-          margin-right: 5px;
-        }
         img {
-          height: 15px;
+          height: 23px;
         }
       }
     }
