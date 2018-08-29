@@ -22,7 +22,13 @@
         <button type="button" class="btn btn-edit">Edit</button>
       </td>
       <td class="item">
-        <button type="button" class="btn btn-del">Delete</button>
+        <button
+          type="button"
+          class="btn btn-del"
+          @click="deleteUser(user)"
+        >
+          Delete
+        </button>
       </td>
     </tr>
     </tbody>
@@ -36,6 +42,11 @@ export default {
     users: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    deleteUser(user) {
+      this.$emit("deleteUser", user);
     }
   }
 };

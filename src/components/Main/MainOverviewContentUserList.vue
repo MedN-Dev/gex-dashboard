@@ -4,7 +4,7 @@
     <div class="user-list">
       <div class="user-list__title">All users in system</div>
       <div v-if="loader" class="loading">Loading...</div>
-      <MainOverviewContentUsers v-else :users="filteredUsers"/>
+      <MainOverviewContentUsers v-else :users="filteredUsers" @deleteUser="deleteUser"/>
     </div>
   </div>
   <div class="main-content__footer">
@@ -34,7 +34,6 @@ export default {
   },
   data() {
     return {
-      users: [],
       loader: true,
       usersPerPage: 2,
       selectedPage: 1
@@ -42,10 +41,10 @@ export default {
   },
   computed: {
     totalUsers() {
-      return this.users.length;
+      return this.$store.getters.users.length;
     },
     filteredUsers() {
-      return this.users.filter((item, index) => {
+      return this.$store.getters.users.filter((item, index) => {
         const startIndex = (this.selectedPage - 1) * this.usersPerPage;
         const finalIndex = startIndex + this.usersPerPage;
         return startIndex <= index && index < finalIndex;
@@ -67,9 +66,12 @@ export default {
         .get("/users.json")
         .then(response => {
           this.loader = false;
-          this.users = response.data;
+          this.$store.dispatch("downloadUsers", response.data);
         })
         .catch(error => console.error(error));
+    },
+    deleteUser(user) {
+      this.$store.dispatch('deleteUser', user)
     }
   }
 };

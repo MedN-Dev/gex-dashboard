@@ -1,14 +1,26 @@
 <template>
   <div class="button-wrapper">
-    <button type="button" class="button-wrapper__btn">
-      Download default users
+    <button type="button" class="button-wrapper__btn" @click="loadUsers">
+      Download users
     </button>
   </div>
 </template>
 
 <script>
+import axios from "../../api/axios.js";
+
 export default {
-  name: "HeaderButton"
+  name: "HeaderButton",
+  methods: {
+    loadUsers() {
+      axios
+        .get("/users.json")
+        .then(response => {
+          this.$store.dispatch("downloadUsers", response.data);
+        })
+        .catch(error => console.error(error));
+    }
+  }
 };
 </script>
 
