@@ -7,7 +7,9 @@
       <div class="progress">
         <div class="progress-bar" :style="getProgress"></div>
       </div>
-      <div class="progress-text">guys <b>{{ this.$store.getters.users.length }}</b> users left</div>
+      <div class="progress-text">
+        guys <b>{{ this.$store.getters.users.length }}</b> users left
+      </div>
     </div>
   </div>
 </template>
@@ -68,7 +70,6 @@ export default {
       background-color: #0077ff;
       transition: width 0.6s ease;
     }
-
     .progress-text {
       color: #8a96a0;
       b {
