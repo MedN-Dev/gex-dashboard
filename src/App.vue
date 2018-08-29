@@ -40,7 +40,7 @@ export default {
 @import "./assets/reset/reset.css";
 
 #app {
-  margin: 50px auto 0 auto;
+  margin: 50px 150px;
   width: 1580px;
 }
 .modal {
@@ -89,6 +89,5 @@ export default {
 }
 .main-wrapper {
   display: flex;
-  margin-bottom: 100px;
 }
 </style>
