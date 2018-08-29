@@ -4,7 +4,11 @@
     <div class="user-list">
       <div class="user-list__title">All users in system</div>
       <div v-if="loader" class="loading">Loading...</div>
-      <MainOverviewContentUsers v-else :users="filteredUsers" @deleteUser="deleteUser"/>
+      <MainOverviewContentUsers
+        v-else
+        :users="filteredUsers"
+        @deleteUser="deleteUser"
+      />
     </div>
   </div>
   <div class="main-content__footer">
@@ -16,7 +20,9 @@
       />
       <div class="footer__info">
         <div></div>
-        <a href="https://github.com/heysafronov/gex-dashboard" target="_blank"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png"></a>
+        <a href="https://github.com/heysafronov/gex-dashboard" target="_blank">
+          <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png">
+        </a>
       </div>
     </div>
   </div>
@@ -29,7 +35,8 @@ import axios from "../../api/axios.js";
 export default {
   name: "MainOverviewContentUserList",
   components: {
-    MainOverviewContentUsers: () => import("./MainOverviewContentUsers.vue"),
+    MainOverviewContentUsers: () =>
+      import("./MainOverviewContentUsers.vue"),
     MainOverviewFooterPagination: () =>
       import("./MainOverviewContentPagination.vue")
   },
