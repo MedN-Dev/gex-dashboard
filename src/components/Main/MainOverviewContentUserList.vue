@@ -15,7 +15,8 @@
         :total="totalUsers"
       />
       <div class="footer__info">
-        Showing <b>{{ usersPerPage }}</b> of <b>{{ totalUsers }}</b> users 🚀
+        <div></div>
+        <a href="https://github.com/heysafronov/gex-dashboard" target="_blank"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Logo.png"></a>
       </div>
     </div>
   </div>
@@ -71,7 +72,7 @@ export default {
         .catch(error => console.error(error));
     },
     deleteUser(user) {
-      this.$store.dispatch('deleteUser', user)
+      this.$store.dispatch("deleteUser", user);
     }
   }
 };
@@ -109,10 +110,18 @@ export default {
       margin: 0 auto;
       height: 110px;
       &__info {
-        color: #8a96a0;
+        display: flex;
+        color: #1a173b;
         font-size: 15px;
-        b {
-          color: #1a173b;
+        div {
+          width: 15px;
+          height: 15px;
+          background-color: #0077ff;
+          border-radius: 15px;
+          margin-right: 5px;
+        }
+        img {
+          height: 15px;
         }
       }
     }
