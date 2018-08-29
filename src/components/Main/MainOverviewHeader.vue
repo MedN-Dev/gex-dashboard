@@ -4,14 +4,30 @@
       Data overview
     </div>
     <div class="overview-header__left">
-      users left
+      <div class="progress">
+        <div class="progress-bar" :style="getProgress"></div>
+      </div>
+      <div class="progress-text">guys <b>{{ this.$store.getters.users.length }}</b> users left</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MainOverviewHeader"
+  name: "MainOverviewHeader",
+  data() {
+    return {
+      maxUsers: 8
+    };
+  },
+  computed: {
+    getProgress() {
+      let size = (this.$store.getters.users.length / this.maxUsers) * 100;
+      return {
+        width: size + "%"
+      };
+    }
+  }
 };
 </script>
 
@@ -29,8 +45,36 @@ export default {
     color: #1a173b;
   }
   &__left {
-    background-color: pink;
-    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    .progress {
+      width: 300px;
+      display: flex;
+      height: 5px;
+      overflow: hidden;
+      font-size: 0.75rem;
+      background-color: #e9ecef;
+      border-radius: 0.25rem;
+      margin-right: 20px;
+    }
+    .progress-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      background-color: #0077ff;
+      transition: width 0.6s ease;
+    }
+
+    .progress-text {
+      color: #8a96a0;
+      b {
+        color: #1a173b;
+      }
+    }
   }
 }
 </style>

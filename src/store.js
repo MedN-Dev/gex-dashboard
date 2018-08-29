@@ -4,7 +4,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  // удалить в prod
+  // -------------------------------удалить в prod
   strict: true,
   state: {
     users: []
