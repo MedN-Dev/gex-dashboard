@@ -1,7 +1,7 @@
 <template>
   <div class="button-wrapper">
     <button type="button" class="button-wrapper__btn" @click="getUsers">
-      Download users
+      Reset users
     </button>
   </div>
 </template>
