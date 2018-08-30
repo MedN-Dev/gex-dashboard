@@ -8,15 +8,15 @@ export default new Router({
   routes: [
     {
       path: "/",
-      component: () => import("./components/Main/MainOverview.vue")
+      component: () => import("../components/Main/MainOverview.vue")
     },
     {
       path: "/users",
-      component: () => import("./components/Main/MainUsers.vue")
+      component: () => import("../components/Main/MainUsers.vue")
     },
     {
       path: "/add",
-      component: () => import("./components/Main/MainAddUser.vue")
+      component: () => import("../components/Main/MainAddUser.vue")
     }
   ]
 });
