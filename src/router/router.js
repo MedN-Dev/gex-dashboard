@@ -17,6 +17,10 @@ export default new Router({
     {
       path: "/add",
       component: () => import("../components/Main/MainAddUser.vue")
+    },
+    {
+      path: "/edit/:id",
+      component: () => import("../components/Main/MainEditUser.vue")
     }
   ]
 });

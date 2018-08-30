@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/reset/reset.css";
+@import "assets/reset.css";
 
 #app {
   margin: 50px auto;

@@ -1,7 +1,15 @@
 <template>
+<div>
   <div>
-    add new user
+    Add user
   </div>
+  <div>
+    <div>
+      <label>ID</label>
+      <input type="text"/>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>

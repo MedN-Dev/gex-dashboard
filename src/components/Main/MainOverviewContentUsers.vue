@@ -19,15 +19,20 @@
       <td class="item color">{{ user.dev }}</td>
       <td class="item color">{{ user.country }}</td>
       <td class="item">
-        <button type="button" class="btn btn-edit">Edit</button>
+        <router-link :to="`/edit/${user.id}`">
+          <button
+            type="button"
+            class="btn btn-edit"
+          >Edit
+          </button>
+        </router-link>
       </td>
       <td class="item">
         <button
           type="button"
           class="btn btn-del"
           @click="deleteUser(user)"
-        >
-          Delete
+        >Delete
         </button>
       </td>
     </tr>
@@ -83,6 +88,9 @@ export default {
       cursor: pointer;
       outline: none;
       letter-spacing: 0.5px;
+    }
+    a {
+      text-decoration: none;
     }
     .btn-edit {
       background-color: #0077ff;

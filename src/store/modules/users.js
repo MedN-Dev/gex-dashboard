@@ -23,6 +23,9 @@ const actions = {
   },
   DELETE_USER({ commit }, user) {
     commit("DELETE_USER", user);
+  },
+  UPDATE_NAME({ commit }, obj) {
+    commit("UPDATE_NAME", obj);
   }
 };
 
@@ -32,6 +35,9 @@ const mutations = {
   },
   DELETE_USER(state, user) {
     state.users = state.users.filter(item => item.id !== user.id);
+  },
+  UPDATE_NAME(state, obj) {
+    state.users[obj.id].name = obj.value;
   }
 };
 
