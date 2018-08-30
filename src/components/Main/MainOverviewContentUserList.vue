@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import axios from "../../api/axios.js";
-
 export default {
   name: "MainOverviewContentUserList",
   components: {
@@ -47,10 +45,10 @@ export default {
   },
   computed: {
     totalUsers() {
-      return this.$store.getters.users.length;
+      return this.$store.getters.USERS.length;
     },
     filteredUsers() {
-      return this.$store.getters.users.filter((item, index) => {
+      return this.$store.getters.USERS.filter((item, index) => {
         const startIndex = (this.selectedPage - 1) * this.usersPerPage;
         const finalIndex = startIndex + this.usersPerPage;
         return startIndex <= index && index < finalIndex;
@@ -63,21 +61,15 @@ export default {
     }
   },
   mounted() {
-    this.loadUsers();
+    this.getUsers();
   },
   methods: {
-    loadUsers() {
-      this.loader = true;
-      axios
-        .get("/users.json")
-        .then(response => {
-          this.loader = false;
-          this.$store.dispatch("downloadUsers", response.data);
-        })
-        .catch(error => console.error(error));
+    async getUsers() {
+      await this.$store.dispatch("GET_USERS");
+      this.loader = false;
     },
     deleteUser(user) {
-      this.$store.dispatch("deleteUser", user);
+      this.$store.dispatch("DELETE_USER", user);
     }
   }
 };

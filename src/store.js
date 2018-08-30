@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from "./api/axios.js";
 
 Vue.use(Vuex);
 
@@ -10,20 +11,27 @@ export default new Vuex.Store({
     users: []
   },
   getters: {
-    users(state) {
+    USERS(state) {
       return state.users;
     }
   },
   actions: {
-    downloadUsers({ commit }, users) {
-      commit("DOWNLOAD_USERS", users);
+    GET_USERS: async context => {
+      await axios
+        .get("/users.json")
+        .then(response => {
+          if (response.status === 200) {
+            context.commit("GET_USERS", response.data);
+          }
+        })
+        .catch(error => console.error(error));
     },
-    deleteUser({ commit }, user) {
+    DELETE_USER({ commit }, user) {
       commit("DELETE_USER", user);
     }
   },
   mutations: {
-    DOWNLOAD_USERS(state, users) {
+    GET_USERS(state, users) {
       state.users = users;
     },
     DELETE_USER(state, user) {

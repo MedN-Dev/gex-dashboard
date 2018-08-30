@@ -5,10 +5,10 @@
     </div>
     <div class="overview-header__left">
       <div class="progress">
-        <div class="progress-bar" :style="getProgress"></div>
+        <div class="progress-bar" :style="getWidth"></div>
       </div>
       <div class="progress-text">
-        in system <b>{{ this.$store.getters.users.length }}</b> users left
+        in system <b>{{ this.$store.getters.USERS.length }}</b> users left
       </div>
     </div>
   </div>
@@ -23,8 +23,9 @@ export default {
     };
   },
   computed: {
-    getProgress() {
-      let size = (this.$store.getters.users.length / this.maxUsers) * 100;
+    getWidth() {
+      let usersLength = this.$store.getters.USERS.length;
+      let size = (usersLength / this.maxUsers) * 100;
       return {
         width: size + "%"
       };
