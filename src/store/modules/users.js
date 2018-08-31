@@ -1,12 +1,16 @@
 import axios from "../../api/axios.js";
 
 const state = {
-  users: []
+  users: [],
+  starter: true
 };
 
 const getters = {
   USERS(state) {
     return state.users;
+  },
+  STARTER(state) {
+    return state.starter;
   }
 };
 
@@ -26,6 +30,9 @@ const actions = {
   },
   UPDATE_NAME({ commit }, obj) {
     commit("UPDATE_NAME", obj);
+  },
+  UPDATE_STARTER({ commit }) {
+    commit("UPDATE_STARTER");
   }
 };
 
@@ -38,6 +45,9 @@ const mutations = {
   },
   UPDATE_NAME(state, obj) {
     state.users[obj.id].name = obj.value;
+  },
+  UPDATE_STARTER(state) {
+    state.starter = false;
   }
 };
 

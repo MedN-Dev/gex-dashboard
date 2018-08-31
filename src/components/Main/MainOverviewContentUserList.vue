@@ -10,6 +10,11 @@
         @deleteUser="deleteUser"
       />
     </div>
+    <div v-show="this.$store.getters.STARTER" class="starter">
+      <button class="btn-starter" @click="getUsers">
+        Start
+      </button>
+    </div>
   </div>
   <div class="main-content__footer">
     <div class="footer">
@@ -38,7 +43,7 @@ export default {
   },
   data() {
     return {
-      loader: true,
+      loader: null,
       usersPerPage: 2,
       selectedPage: 1
     };
@@ -60,11 +65,10 @@ export default {
       this.selectedPage = 1;
     }
   },
-  mounted() {
-    this.getUsers();
-  },
   methods: {
     async getUsers() {
+      this.$store.dispatch("UPDATE_STARTER");
+      this.loader = true;
       await this.$store.dispatch("GET_USERS");
       this.loader = false;
     },
@@ -94,6 +98,14 @@ export default {
       &__title {
         font-size: 21px;
         color: #1a173b;
+      }
+    }
+    .starter {
+      display: flex;
+      justify-content: center;
+      margin: 40px;
+      .btn-starter {
+
       }
     }
   }
