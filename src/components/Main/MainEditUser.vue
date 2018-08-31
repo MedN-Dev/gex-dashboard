@@ -26,7 +26,9 @@
           <input class="form-control" type="text" v-model="nameUser"/>
         </div>
         <div class="wrapper-control">
-          <div :class="{saved, editing}">SAVED</div>
+          <div class="button">
+            <div :class="{saved, editing}">SAVED</div>
+          </div>
         </div>
       </div>
       </div>
@@ -104,35 +106,41 @@ export default {
         display: flex;
         .wrapper-control {
           padding: 10px;
-          .editing {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+          .button {
             width: 214px;
             height: 38px;
-            border-radius: 4px;
-            background: repeating-linear-gradient(
-              45deg,
-              white,
-              white 10px,
-              #0077ff 10px,
-              #0077ff 20px
-            );
-            color: white;
-            font-size: 15px;
-            letter-spacing: 0.5px;
-          }
-          .saved {
             display: flex;
-            justify-content: center;
             align-items: center;
-            width: 214px;
-            height: 38px;
-            border-radius: 4px;
-            background-color: #0077ff;
-            color: white;
-            font-size: 15px;
-            letter-spacing: 0.5px;
+            .editing {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 214px;
+              height: 28px;
+              border-radius: 4px;
+              background: repeating-linear-gradient(
+                45deg,
+                white,
+                white 10px,
+                #0077ff 10px,
+                #0077ff 20px
+              );
+              color: white;
+              font-size: 15px;
+              letter-spacing: 0.5px;
+            }
+            .saved {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 214px;
+              height: 28px;
+              border-radius: 4px;
+              background-color: #0077ff;
+              color: white;
+              font-size: 15px;
+              letter-spacing: 0.5px;
+            }
           }
         }
       }

@@ -51,7 +51,9 @@
             />
           </div>
           <div class="wrapper-control">
-            <button type="button" class="editing">SAVE</button>
+            <div class="button">
+              <button type="button" class="editing">SAVE</button>
+            </div>
           </div>
         </div>
       </div>
@@ -114,37 +116,43 @@ export default {
         display: flex;
         .wrapper-control {
           padding: 10px;
-          .editing {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            outline: none;
-            cursor: pointer;
+          .button {
             width: 214px;
             height: 38px;
-            border-radius: 4px;
-            background: repeating-linear-gradient(
-              45deg,
-              white,
-              white 10px,
-              #0077ff 10px,
-              #0077ff 20px
-            );
-            color: white;
-            font-size: 15px;
-            letter-spacing: 0.5px;
-            &:hover {
+            display: flex;
+            align-items: center;
+            .editing {
               display: flex;
               justify-content: center;
               align-items: center;
+              border: none;
+              outline: none;
+              cursor: pointer;
               width: 214px;
-              height: 38px;
+              height: 28px;
               border-radius: 4px;
-              background: #0077ff;
+              background: repeating-linear-gradient(
+                45deg,
+                white,
+                white 10px,
+                #0077ff 10px,
+                #0077ff 20px
+              );
               color: white;
               font-size: 15px;
               letter-spacing: 0.5px;
+              &:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 214px;
+                height: 28px;
+                border-radius: 4px;
+                background: #0077ff;
+                color: white;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+              }
             }
           }
         }

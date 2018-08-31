@@ -1,7 +1,10 @@
 <template>
   <div class="users">
     <div class="users__title">
-      All users in system
+      <div class="title">
+        All users in system
+      </div>
+      <MainOverviewHeaderProgress/>
     </div>
     <div class="users__list">
       <div class="users__list-wrapper">
@@ -19,7 +22,8 @@
 export default {
   name: "MainUsers",
   components: {
-    MainOverviewContentUsers: () => import("./MainOverviewContentUsers.vue")
+    MainOverviewContentUsers: () => import("./MainOverviewContentUsers.vue"),
+    MainOverviewHeaderProgress: () => import("./MainOverviewHeaderProgress.vue")
   },
   methods: {
     deleteUser(user) {
@@ -33,13 +37,18 @@ export default {
 .users {
   &__title {
     display: flex;
-    align-items: center;
     width: 1402px;
-    height: 90px;
     margin: 0 auto;
-    font-size: 21px;
-    letter-spacing: 0.14px;
-    color: #1a173b;
+    .title {
+      display: flex;
+      align-items: center;
+      width: 939px;
+      height: 90px;
+
+      font-size: 21px;
+      letter-spacing: 0.14px;
+      color: #1a173b;
+    }
   }
   &__list {
     width: 1402px;
