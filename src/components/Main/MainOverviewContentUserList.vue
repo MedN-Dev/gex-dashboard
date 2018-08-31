@@ -1,36 +1,36 @@
 <template>
-<div class="main-content">
-  <div class="main-content__user-list">
-    <div class="user-list">
-      <div class="user-list__title">All users in system</div>
-      <div v-if="loader" class="loading">Loading...</div>
-      <MainOverviewContentUsers
-        v-else
-        :users="filteredUsers"
-        @deleteUser="deleteUser"
-      />
+  <div class="main-content">
+    <div class="main-content__user-list">
+      <div class="user-list">
+        <div class="user-list__title">All users in system</div>
+        <div v-if="loader" class="loading">Loading...</div>
+        <MainOverviewContentUsers
+          v-else
+          :users="filteredUsers"
+          @deleteUser="deleteUser"
+        />
+      </div>
+      <div v-show="this.$store.getters.STARTER" class="starter">
+        <button class="btn-starter" @click="getUsers">
+          Download users
+        </button>
+      </div>
     </div>
-    <div v-show="this.$store.getters.STARTER" class="starter">
-      <button class="btn-starter" @click="getUsers">
-        Download users
-      </button>
-    </div>
-  </div>
-  <div class="main-content__footer">
-    <div class="footer">
-      <MainOverviewFooterPagination
-        v-model.number="selectedPage"
-        :per-page="usersPerPage"
-        :total="totalUsers"
-      />
-      <div class="footer__info">
-        <a href="https://github.com/heysafronov/gex-dashboard" target="_blank">
-          <img src="http://safronov.io/trash/gh.png">
-        </a>
+    <div class="main-content__footer">
+      <div class="footer">
+        <MainOverviewFooterPagination
+          v-model.number="selectedPage"
+          :per-page="usersPerPage"
+          :total="totalUsers"
+        />
+        <div class="footer__info">
+          <a href="https://github.com/heysafronov/gex-dashboard" target="_blank">
+            <img src="http://safronov.io/trash/gh.png">
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -108,7 +108,13 @@ export default {
         font-size: 15px;
         padding: 9px 15px;
         color: white;
-        background-color: #f0166d;
+        background: repeating-linear-gradient(
+          45deg,
+          white,
+          white 10px,
+          #f0166d 10px,
+          #f0166d 20px
+        );
         transition: all 0.3s linear;
         animation-iteration-count: infinite;
         border: none;
@@ -127,6 +133,9 @@ export default {
           100% {
             transform: scaleY(1);
           }
+        }
+        &:hover {
+          background: #f0166d;
         }
       }
     }

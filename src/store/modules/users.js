@@ -8,9 +8,6 @@ const state = {
 const getters = {
   USERS(state) {
     return state.users;
-  },
-  STARTER(state) {
-    return state.starter;
   }
 };
 
@@ -28,11 +25,11 @@ const actions = {
   DELETE_USER({ commit }, user) {
     commit("DELETE_USER", user);
   },
+  ADD_USER({ commit }, user) {
+    commit("ADD_USER", user);
+  },
   UPDATE_NAME({ commit }, obj) {
     commit("UPDATE_NAME", obj);
-  },
-  UPDATE_STARTER({ commit }) {
-    commit("UPDATE_STARTER");
   }
 };
 
@@ -43,11 +40,11 @@ const mutations = {
   DELETE_USER(state, user) {
     state.users = state.users.filter(item => item.id !== user.id);
   },
+  ADD_USER(state, user) {
+    state.users.push(user);
+  },
   UPDATE_NAME(state, obj) {
     state.users[obj.id].name = obj.value;
-  },
-  UPDATE_STARTER(state) {
-    state.starter = false;
   }
 };
 

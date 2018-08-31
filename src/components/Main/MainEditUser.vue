@@ -116,7 +116,7 @@ export default {
               justify-content: center;
               align-items: center;
               width: 214px;
-              height: 28px;
+              height: 30px;
               border-radius: 4px;
               background: repeating-linear-gradient(
                 45deg,
@@ -134,7 +134,7 @@ export default {
               justify-content: center;
               align-items: center;
               width: 214px;
-              height: 28px;
+              height: 30px;
               border-radius: 4px;
               background-color: #0077ff;
               color: white;

@@ -10,7 +10,7 @@
             <input
               class="form-control"
               type="text"
-              v-model="newUser.name"
+              v-model.trim="newUser.name"
               placeholder="Name"
             />
           </div>
@@ -18,41 +18,51 @@
             <input
               class="form-control"
               type="email"
-              v-model="newUser.email"
+              v-model.trim="newUser.email"
               placeholder="Email"
             />
           </div>
         </div>
         <div class="controls-stack">
           <div class="wrapper-control">
-            <input
-              class="form-control"
+            <select
+              class="form-control form-control-select"
               type="text"
               v-model="newUser.dev"
-              placeholder="Framework"
-            />
+            >
+              <option disabled value="">Framework</option>
+              <option>Vue</option>
+              <option>React</option>
+              <option>Angular</option>
+            </select>
           </div>
           <div class="wrapper-control">
-            <input
-              class="form-control"
+            <select
+              class="form-control form-control-select"
               type="text"
               v-model="newUser.country"
               placeholder="Country"
-            />
+            >
+              <option disabled value="">Country</option>
+              <option>Russia</option>
+              <option>Czech</option>
+              <option>Thailand</option>
+              <option>USA</option>
+            </select>
           </div>
         </div>
         <div class="controls-stack">
           <div class="wrapper-control">
             <input
-              class="form-control"
+              class="id"
               type="text"
-              placeholder="Your ID: 324234"
+              :placeholder="`Your ID: ${newUser.id}`"
               readonly
             />
           </div>
           <div class="wrapper-control">
             <div class="button">
-              <button type="button" class="editing">SAVE</button>
+              <button type="button" class="editing" @click="saveNewUser">SAVE</button>
             </div>
           </div>
         </div>
@@ -70,9 +80,24 @@ export default {
         name: "",
         email: "",
         dev: "",
-        country: ""
+        country: "",
+        id: ""
       }
     };
+  },
+  mounted() {
+    this.randomID();
+  },
+  methods: {
+    saveNewUser() {
+      if (this.newUser.name.length && this.newUser.email.length) {
+        this.$store.dispatch("ADD_USER", this.newUser);
+        this.$router.push("/users");
+      }
+    },
+    randomID() {
+      this.newUser.id = Math.round(Math.random() * 36 ** 8).toString(36);
+    }
   }
 };
 </script>
@@ -109,18 +134,35 @@ export default {
         font-size: 15px;
         letter-spacing: 0.5px;
         &::placeholder {
-          color: #c0c5d2;
+          color: #8a96a0;
         }
+      }
+      .form-control-select {
+        width: 214px;
+        height: 39px;
       }
       .controls-stack {
         display: flex;
         .wrapper-control {
           padding: 10px;
+          .id {
+            color: #8a96a0;
+            outline: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            border: 1px solid #ebedf8;
+            border-radius: 4px;
+            padding: 10px;
+            &::placeholder {
+              color: #c0c5d2;
+            }
+          }
           .button {
             width: 214px;
-            height: 38px;
+            height: 39px;
             display: flex;
             align-items: center;
+            justify-content: center;
             .editing {
               display: flex;
               justify-content: center;
@@ -129,7 +171,7 @@ export default {
               outline: none;
               cursor: pointer;
               width: 214px;
-              height: 28px;
+              height: 30px;
               border-radius: 4px;
               background: repeating-linear-gradient(
                 45deg,
@@ -146,7 +188,7 @@ export default {
                 justify-content: center;
                 align-items: center;
                 width: 214px;
-                height: 28px;
+                height: 30px;
                 border-radius: 4px;
                 background: #0077ff;
                 color: white;

@@ -100,7 +100,6 @@ export default {
     }
     .btn-del {
       background-color: #f0166d;
-      opacity: 0.5;
       &:hover {
         box-shadow: 0px 0px 6px 0px #f0166d;
       }
