@@ -108,13 +108,7 @@ export default {
         font-size: 15px;
         padding: 9px 15px;
         color: white;
-        background: repeating-linear-gradient(
-          45deg,
-          white,
-          white 10px,
-          #f0166d 10px,
-          #f0166d 20px
-        );
+        background: #f0166d;
         transition: all 0.3s linear;
         animation-iteration-count: infinite;
         border: none;
@@ -135,7 +129,13 @@ export default {
           }
         }
         &:hover {
-          background: #f0166d;
+          background: repeating-linear-gradient(
+            45deg,
+            white,
+            white 10px,
+            #f0166d 10px,
+            #f0166d 20px
+          );
         }
       }
     }

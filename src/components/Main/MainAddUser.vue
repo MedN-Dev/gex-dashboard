@@ -86,7 +86,7 @@ export default {
     };
   },
   mounted() {
-    this.randomID();
+    this.newID();
     this.date();
   },
   methods: {
@@ -96,8 +96,8 @@ export default {
         this.$router.push("/users");
       }
     },
-    randomID() {
-      this.newUser.id = Math.round(Math.random() * 36 ** 8).toString(36);
+    newID() {
+      this.newUser.id = this.$store.getters.USERS.length;
     },
     date() {
       this.newUser.reg = new Date().toLocaleDateString();
@@ -191,7 +191,7 @@ export default {
           }
         }
         .type-email input:invalid {
-          border: 1px solid #f0166d;
+          border: 1px solid #0077ff;
           border-radius: 4px;
           padding: 10px;
           color: #8a96a0;
