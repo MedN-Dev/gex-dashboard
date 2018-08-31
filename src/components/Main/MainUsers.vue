@@ -49,7 +49,7 @@ export default {
       border-radius: 4px;
       margin-bottom: 40px;
       .table {
-        margin: 20px 0 20px 20px;
+        margin: 10px 0 20px 20px;
       }
     }
   }

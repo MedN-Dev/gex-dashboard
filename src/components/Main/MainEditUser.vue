@@ -109,14 +109,14 @@ export default {
             justify-content: center;
             align-items: center;
             width: 214px;
-            height: 39px;
+            height: 38px;
             border-radius: 4px;
             background: repeating-linear-gradient(
               45deg,
               white,
               white 10px,
-              #0db07a 10px,
-              #0db07a 20px
+              #0077ff 10px,
+              #0077ff 20px
             );
             color: white;
             font-size: 15px;
@@ -127,9 +127,9 @@ export default {
             justify-content: center;
             align-items: center;
             width: 214px;
-            height: 39px;
+            height: 38px;
             border-radius: 4px;
-            background-color: #0db07a;
+            background-color: #0077ff;
             color: white;
             font-size: 15px;
             letter-spacing: 0.5px;
