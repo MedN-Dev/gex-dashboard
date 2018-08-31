@@ -6,17 +6,16 @@
     <div class="form__controls-wrapper">
       <div class="form__controls">
         <div class="controls-stack">
-          <div class="wrapper-control">
+          <div class="wrapper-control type-email">
             <input
-              class="form-control"
               type="text"
               v-model.trim="newUser.name"
               placeholder="Name"
+              required
             />
           </div>
-          <div class="wrapper-control">
+          <div class="wrapper-control type-email">
             <input
-              class="form-control"
               type="email"
               v-model.trim="newUser.email"
               placeholder="Email"
@@ -24,9 +23,9 @@
           </div>
         </div>
         <div class="controls-stack">
-          <div class="wrapper-control">
+          <div class="wrapper-control type-email">
             <select
-              class="form-control form-control-select"
+              class="form-control-select"
               type="text"
               v-model="newUser.dev"
             >
@@ -36,9 +35,9 @@
               <option>Angular</option>
             </select>
           </div>
-          <div class="wrapper-control">
+          <div class="wrapper-control type-email">
             <select
-              class="form-control form-control-select"
+              class="form-control-select"
               type="text"
               v-model="newUser.country"
               placeholder="Country"
@@ -81,22 +80,27 @@ export default {
         email: "",
         dev: "",
         country: "",
-        id: ""
+        id: "",
+        reg: ""
       }
     };
   },
   mounted() {
     this.randomID();
+    this.date();
   },
   methods: {
     saveNewUser() {
-      if (this.newUser.name.length && this.newUser.email.length) {
+      if (this.newUser.name.length) {
         this.$store.dispatch("ADD_USER", this.newUser);
         this.$router.push("/users");
       }
     },
     randomID() {
       this.newUser.id = Math.round(Math.random() * 36 ** 8).toString(36);
+    },
+    date() {
+      this.newUser.reg = new Date().toLocaleDateString();
     }
   }
 };
@@ -125,18 +129,6 @@ export default {
     border-radius: 4px;
     .form__controls {
       padding: 50px;
-      .form-control {
-        border: 1px solid #ebedf8;
-        border-radius: 4px;
-        padding: 10px;
-        color: #8a96a0;
-        outline: none;
-        font-size: 15px;
-        letter-spacing: 0.5px;
-        &::placeholder {
-          color: #8a96a0;
-        }
-      }
       .form-control-select {
         width: 214px;
         height: 39px;
@@ -196,6 +188,39 @@ export default {
                 letter-spacing: 0.5px;
               }
             }
+          }
+        }
+        .type-email input:invalid {
+          border: 1px solid #f0166d;
+          border-radius: 4px;
+          padding: 10px;
+          color: #8a96a0;
+          outline: none;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+        }
+        .type-email input:valid {
+          border: 1px solid #ebedf8;
+          border-radius: 4px;
+          padding: 10px;
+          color: #8a96a0;
+          outline: none;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+          &::placeholder {
+            color: #8a96a0;
+          }
+        }
+        .type-email select {
+          border: 1px solid #ebedf8;
+          border-radius: 4px;
+          padding: 10px;
+          color: #8a96a0;
+          outline: none;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+          &::placeholder {
+            color: #8a96a0;
           }
         }
       }
