@@ -28,8 +28,17 @@ const actions = {
   ADD_USER({ commit }, user) {
     commit("ADD_USER", user);
   },
-  UPDATE_NAME({ commit }, obj) {
-    commit("UPDATE_NAME", obj);
+  UPDATE_NAME_USER({ commit }, obj) {
+    commit("UPDATE_NAME_USER", obj);
+  },
+  UPDATE_EMAIL_USER({ commit }, obj) {
+    commit("UPDATE_EMAIL_USER", obj);
+  },
+  UPDATE_DEV_USER({ commit }, obj) {
+    commit("UPDATE_DEV_USER", obj);
+  },
+  UPDATE_COUNTRY_USER({ commit }, obj) {
+    commit("UPDATE_COUNTRY_USER", obj);
   }
 };
 
@@ -43,8 +52,17 @@ const mutations = {
   ADD_USER(state, user) {
     state.users.push(user);
   },
-  UPDATE_NAME(state, obj) {
+  UPDATE_NAME_USER(state, obj) {
     state.users[obj.id].name = obj.value;
+  },
+  UPDATE_EMAIL_USER(state, obj) {
+    state.users[obj.id].email = obj.value;
+  },
+  UPDATE_DEV_USER(state, obj) {
+    state.users[obj.id].dev = obj.value;
+  },
+  UPDATE_COUNTRY_USER(state, obj) {
+    state.users[obj.id].country = obj.value;
   }
 };
 

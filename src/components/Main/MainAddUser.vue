@@ -1,12 +1,12 @@
 <template>
   <div class="form">
     <div class="form__title">
-      Add a new user
+      Add a new user: <span>{{ newUser.name }}</span>
     </div>
     <div class="form__controls-wrapper">
       <div class="form__controls">
         <div class="controls-stack">
-          <div class="wrapper-control type-email">
+          <div class="wrapper-control types">
             <input
               type="text"
               v-model.trim="newUser.name"
@@ -14,7 +14,7 @@
               required
             />
           </div>
-          <div class="wrapper-control type-email">
+          <div class="wrapper-control types">
             <input
               type="email"
               v-model.trim="newUser.email"
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="controls-stack">
-          <div class="wrapper-control type-email">
+          <div class="wrapper-control types">
             <select
               class="form-control-select"
               type="text"
@@ -35,7 +35,7 @@
               <option>Angular</option>
             </select>
           </div>
-          <div class="wrapper-control type-email">
+          <div class="wrapper-control types">
             <select
               class="form-control-select"
               type="text"
@@ -190,7 +190,7 @@ export default {
             }
           }
         }
-        .type-email input:invalid {
+        .types input:invalid {
           border: 1px solid #0077ff;
           border-radius: 4px;
           padding: 10px;
@@ -199,7 +199,7 @@ export default {
           font-size: 15px;
           letter-spacing: 0.5px;
         }
-        .type-email input:valid {
+        .types input:valid {
           border: 1px solid #ebedf8;
           border-radius: 4px;
           padding: 10px;
@@ -211,7 +211,7 @@ export default {
             color: #8a96a0;
           }
         }
-        .type-email select {
+        .types select {
           border: 1px solid #ebedf8;
           border-radius: 4px;
           padding: 10px;

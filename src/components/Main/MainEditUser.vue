@@ -1,29 +1,34 @@
 <template>
   <div class="form">
     <div class="form__title">
-      Editing user:<span>{{ nameUser }}</span>
+      Editing user:<span>{{ userName }}</span>
     </div>
     <div class="form__controls-wrapper">
       <div class="form__controls">
         <div class="controls-stack">
           <div class="wrapper-control">
-            <input class="form-control" type="text" v-model="nameUser"/>
+            <input class="form-control" type="text" v-model="userName"/>
           </div>
           <div class="wrapper-control">
-            <input class="form-control" type="text" v-model="nameUser"/>
+            <input class="form-control" type="text" v-model="userEmail"/>
           </div>
         </div>
       <div class="controls-stack">
         <div class="wrapper-control">
-          <input class="form-control" type="text" v-model="nameUser"/>
+          <input class="form-control" type="text" v-model="userDev"/>
         </div>
         <div class="wrapper-control">
-          <input class="form-control" type="text" v-model="nameUser"/>
+          <input class="form-control" type="text" v-model="userCountry"/>
         </div>
       </div>
       <div class="controls-stack">
         <div class="wrapper-control">
-          <input class="form-control" type="text" v-model="nameUser"/>
+          <input
+            class="id"
+            type="text"
+            :placeholder="`Your ID: ${id}`"
+            readonly
+          />
         </div>
         <div class="wrapper-control">
           <div class="button">
@@ -49,14 +54,50 @@ export default {
     id() {
       return parseInt(this.$route.params.id, 10);
     },
-    nameUser: {
+    userName: {
       get() {
         return this.$store.getters.USERS[this.id].name;
       },
       set(value) {
         this.saved = true;
         this.editing = false;
-        this.$store.commit("UPDATE_NAME", { value: value, id: this.id });
+        this.$store.commit("UPDATE_NAME_USER", { value: value, id: this.id });
+        setTimeout(this.changeSaveStatus, 300);
+      }
+    },
+    userEmail: {
+      get() {
+        return this.$store.getters.USERS[this.id].email;
+      },
+      set(value) {
+        this.saved = true;
+        this.editing = false;
+        this.$store.commit("UPDATE_EMAIL_USER", { value: value, id: this.id });
+        setTimeout(this.changeSaveStatus, 300);
+      }
+    },
+    userDev: {
+      get() {
+        return this.$store.getters.USERS[this.id].dev;
+      },
+      set(value) {
+        this.saved = true;
+        this.editing = false;
+        this.$store.commit("UPDATE_DEV_USER", { value: value, id: this.id });
+        setTimeout(this.changeSaveStatus, 300);
+      }
+    },
+    userCountry: {
+      get() {
+        return this.$store.getters.USERS[this.id].country;
+      },
+      set(value) {
+        this.saved = true;
+        this.editing = false;
+        this.$store.commit("UPDATE_COUNTRY_USER", {
+          value: value,
+          id: this.id
+        });
         setTimeout(this.changeSaveStatus, 300);
       }
     }
@@ -140,6 +181,18 @@ export default {
               color: white;
               font-size: 15px;
               letter-spacing: 0.5px;
+            }
+          }
+          .id {
+            color: #8a96a0;
+            outline: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            border: 1px solid #ebedf8;
+            border-radius: 4px;
+            padding: 10px;
+            &::placeholder {
+              color: #c0c5d2;
             }
           }
         }
