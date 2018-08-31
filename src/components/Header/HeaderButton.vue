@@ -12,6 +12,7 @@ export default {
   methods: {
     getUsers() {
       this.$store.dispatch("GET_USERS");
+      this.$store.dispatch("UPDATE_STARTER");
     }
   }
 };

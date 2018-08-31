@@ -12,7 +12,7 @@
     </div>
     <div v-show="this.$store.getters.STARTER" class="starter">
       <button class="btn-starter" @click="getUsers">
-        Start
+        Download users
       </button>
     </div>
   </div>
@@ -105,7 +105,29 @@ export default {
       justify-content: center;
       margin: 40px;
       .btn-starter {
+        font-size: 15px;
+        padding: 9px 15px;
+        color: white;
+        background-color: #f0166d;
+        transition: all 0.3s linear;
+        animation-iteration-count: infinite;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        animation-duration: 1s;
+        animation-name: shrink;
 
+        @keyframes shrink {
+          0% {
+            transform: scaleY(1);
+          }
+          49% {
+            transform: scale(0.95, 0.95);
+          }
+          100% {
+            transform: scaleY(1);
+          }
+        }
       }
     }
   }
