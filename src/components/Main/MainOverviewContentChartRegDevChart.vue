@@ -19,7 +19,7 @@ export default {
         labels: ["USA", "Thailand", "Russia", "Czech"],
         datasets: [
           {
-            label: "Users",
+            label: "users",
             backgroundColor: "#0077ff",
             borderWidth: 0,
             data: []
@@ -33,16 +33,25 @@ export default {
         scales: {
           yAxes: [
             {
-              ticks: { fontColor: "red" },
+              ticks: { fontColor: "#8a96a0" },
               gridLines: { display: false }
             }
           ],
           xAxes: [
             {
-              ticks: { fontColor: "red" },
+              ticks: { fontColor: "#8a96a0" },
               gridLines: { display: false }
             }
           ]
+        },
+        legend: { display: false },
+        layout: {
+          padding: {
+            left: 10,
+            right: 30,
+            top: 40,
+            bottom: 0
+          }
         }
       },
       showInt: false
