@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <canvas ref="canvas" width="900" height="400"></canvas>
-    <div>Russia: {{ getRussia }}</div>
+    <div>Russia: {{ getRussiaInt }}</div>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ["January", "February", "March", "April"],
+        labels: ["USA", "Thailand", "Russia", "Czech"],
         datasets: [
           {
             label: "Countries",
@@ -29,12 +29,12 @@ export default {
   },
 
   mounted() {
-    this.xyu();
+    this.getCountiesArr();
     this.renderChart(this.chartData);
   },
 
   beforeUpdate() {
-    this.xyu();
+    this.getCountiesArr();
     this.renderChart(this.chartData);
   },
 
@@ -42,10 +42,37 @@ export default {
     getUsers() {
       return this.$store.getters.USERS;
     },
-    getRussia() {
+    getRussiaInt() {
       let array = [];
       this.getUsers.forEach(item => {
         if (item.country === "Russia") {
+          array.push(item.country);
+        }
+      });
+      return array.length;
+    },
+    getThailandInt() {
+      let array = [];
+      this.getUsers.forEach(item => {
+        if (item.country === "Thailand") {
+          array.push(item.country);
+        }
+      });
+      return array.length;
+    },
+    getCzechInt() {
+      let array = [];
+      this.getUsers.forEach(item => {
+        if (item.country === "Czech") {
+          array.push(item.country);
+        }
+      });
+      return array.length;
+    },
+    getUsaInt() {
+      let array = [];
+      this.getUsers.forEach(item => {
+        if (item.country === "USA") {
           array.push(item.country);
         }
       });
@@ -54,10 +81,13 @@ export default {
   },
 
   methods: {
-
-    xyu() {
+    getCountiesArr() {
       let arr = [];
-      arr.push(this.$store.getters.USERS.length);
+
+      arr.push(this.getUsaInt);
+      arr.push(this.getThailandInt);
+      arr.push(this.getRussiaInt);
+      arr.push(this.getCzechInt);
       this.chartData.datasets[0].data = arr;
     }
   }
