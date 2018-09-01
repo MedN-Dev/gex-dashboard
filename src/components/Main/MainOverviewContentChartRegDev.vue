@@ -1,10 +1,55 @@
 <template>
-  <div class="chart"></div>
+  <div class="chart">
+    <MainOverviewContentChartRegDevChart :chart-data="chartData"/>
+    <button @click="fillData">Randomize</button>
+    <div>VALUEEEEE---{{ getUsa }}</div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "MainOverviewContentChartRegDev"
+  name: "MainOverviewContentChartRegDev",
+  components: {
+    MainOverviewContentChartRegDevChart: () =>
+      import("./MainOverviewContentChartRegDevChart.vue")
+  },
+  data() {
+    return {
+      chartData: null
+    };
+  },
+  mounted() {
+    this.fillData();
+  },
+computed: {
+  getUsers() {
+    return this.$store.getters.USERS;
+  },
+  getUsa() {
+    let array = [];
+    this.getUsers.forEach(item => {
+      if (item.country === "USA") {
+        array.push(item.country);
+      }
+    });
+    return array.length;
+  }
+},
+  methods: {
+    fillData() {
+      this.chartData = {
+        labels: ["Czech", "Thailand", "Russia", "USA"],
+        datasets: [
+          {
+            label: "Countries",
+            backgroundColor: "#f87979",
+            data: [7, 3, 6, this.getUsa]
+          }
+        ]
+      };
+    },
+
+  }
 };
 </script>
 
