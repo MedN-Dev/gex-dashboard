@@ -109,11 +109,12 @@ export default {
   methods: {
     getCountiesArr() {
       let arr = [];
-
-      arr.push(this.getUsaInt);
-      arr.push(this.getThailandInt);
-      arr.push(this.getRussiaInt);
-      arr.push(this.getCzechInt);
+      arr.push(
+        this.getUsaInt,
+        this.getThailandInt,
+        this.getRussiaInt,
+        this.getCzechInt
+      );
       this.chartData.datasets[0].data = arr;
     }
   }
