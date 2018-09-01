@@ -15,7 +15,7 @@ export default {
   name: "MainOverviewHeaderProgress",
   data() {
     return {
-      maxUsers: 9
+      maxUsers: 12
     };
   },
   computed: {

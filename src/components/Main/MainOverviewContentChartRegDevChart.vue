@@ -21,20 +21,40 @@ export default {
           {
             label: "Users",
             backgroundColor: "#0077ff",
+            borderWidth: 0,
             data: []
           }
         ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        labels: { fontColor: "red" },
+        scales: {
+          yAxes: [
+            {
+              ticks: { fontColor: "red" },
+              gridLines: { display: false }
+            }
+          ],
+          xAxes: [
+            {
+              ticks: { fontColor: "red" },
+              gridLines: { display: false }
+            }
+          ]
+        }
       },
       showInt: false
     };
   },
   mounted() {
     this.getCountiesArr();
-    this.renderChart(this.chartData);
+    this.renderChart(this.chartData, this.options);
   },
   beforeUpdate() {
     this.getCountiesArr();
-    this.renderChart(this.chartData);
+    this.renderChart(this.chartData, this.options);
   },
   computed: {
     getUsers() {
