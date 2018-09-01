@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <canvas ref="canvas" width="900" height="400"></canvas>
-    <div>Russia: {{ getRussiaInt }}</div>
+    <div v-show="showInt">Length: {{ getUsers.length }}</div>
   </div>
 </template>
 
@@ -19,25 +19,23 @@ export default {
         labels: ["USA", "Thailand", "Russia", "Czech"],
         datasets: [
           {
-            label: "Countries",
-            backgroundColor: "#f87979",
+            label: "Users",
+            backgroundColor: "#0077ff",
             data: []
           }
         ]
-      }
+      },
+      showInt: false
     };
   },
-
   mounted() {
     this.getCountiesArr();
     this.renderChart(this.chartData);
   },
-
   beforeUpdate() {
     this.getCountiesArr();
     this.renderChart(this.chartData);
   },
-
   computed: {
     getUsers() {
       return this.$store.getters.USERS;
@@ -79,7 +77,6 @@ export default {
       return array.length;
     }
   },
-
   methods: {
     getCountiesArr() {
       let arr = [];

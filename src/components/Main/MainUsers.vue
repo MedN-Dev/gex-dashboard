@@ -42,7 +42,7 @@ export default {
     .title {
       display: flex;
       align-items: center;
-      width: 939px;
+      width: 931px;
       height: 90px;
 
       font-size: 21px;

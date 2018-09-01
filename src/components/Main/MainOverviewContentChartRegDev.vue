@@ -1,7 +1,6 @@
 <template>
   <div class="chart">
-    <MainOverviewContentChartRegDevChart />
-
+    <MainOverviewContentChartRegDevChart/>
   </div>
 </template>
 
@@ -11,9 +10,7 @@ export default {
   components: {
     MainOverviewContentChartRegDevChart: () =>
       import("./MainOverviewContentChartRegDevChart.vue")
-  },
-
-
+  }
 };
 </script>
 
