@@ -1,13 +1,18 @@
 <template>
   <div class="chart">
-    <div class="chart__country"></div>
+    <div class="chart__country">
+      <ContentChartDev/>
+    </div>
     <div class="chart__total"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MainOverviewContentChartCountry"
+  name: "ContentChartDevWrapper",
+  components: {
+    ContentChartDev: () => import("./ContentChartDev.vue")
+  }
 };
 </script>
 

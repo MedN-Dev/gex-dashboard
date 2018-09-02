@@ -6,22 +6,22 @@
 </template>
 
 <script>
-import { Line, mixins } from "vue-chartjs";
+import { Pie, mixins } from "vue-chartjs";
 const { reactiveData } = mixins;
 
 export default {
   name: "MainOverviewContentChartRegDevChart",
-  extends: Line,
+  extends: Pie,
   mixins: [reactiveData],
   data() {
     return {
       chartData: {
-        labels: ["USA", "Thailand", "Russia", "Czech"],
+        labels: ["React", "Vue", "Angular"],
         datasets: [
           {
             label: "users",
-            backgroundColor: "#0077ff",
-            borderWidth: 0,
+            backgroundColor: ["#0077ff", "#0db07a", "#f0166d"],
+            borderWidth: 5,
             data: []
           }
         ]
@@ -46,9 +46,9 @@ export default {
         legend: { display: false },
         layout: {
           padding: {
-            left: 10,
-            right: 30,
-            top: 40,
+            left: 0,
+            right: 0,
+            top: 0,
             bottom: 0
           }
         }
@@ -57,63 +57,49 @@ export default {
     };
   },
   mounted() {
-    this.getCountiesArr();
+    this.getDevArr();
     this.renderChart(this.chartData, this.options);
   },
   updated() {
-    this.getCountiesArr();
+    this.getDevArr();
     this.renderChart(this.chartData, this.options);
   },
   computed: {
     getUsers() {
       return this.$store.getters.USERS;
     },
-    getRussiaInt() {
+    getReactInt() {
       let array = [];
       this.getUsers.forEach(item => {
-        if (item.country === "Russia") {
-          array.push(item.country);
+        if (item.dev === "React") {
+          array.push(item.dev);
         }
       });
       return array.length;
     },
-    getThailandInt() {
+    getVueInt() {
       let array = [];
       this.getUsers.forEach(item => {
-        if (item.country === "Thailand") {
-          array.push(item.country);
+        if (item.dev === "Vue") {
+          array.push(item.dev);
         }
       });
       return array.length;
     },
-    getCzechInt() {
+    getAngularInt() {
       let array = [];
       this.getUsers.forEach(item => {
-        if (item.country === "Czech") {
-          array.push(item.country);
-        }
-      });
-      return array.length;
-    },
-    getUsaInt() {
-      let array = [];
-      this.getUsers.forEach(item => {
-        if (item.country === "USA") {
-          array.push(item.country);
+        if (item.dev === "Angular") {
+          array.push(item.dev);
         }
       });
       return array.length;
     }
   },
   methods: {
-    getCountiesArr() {
+    getDevArr() {
       let arr = [];
-      arr.push(
-        this.getUsaInt,
-        this.getThailandInt,
-        this.getRussiaInt,
-        this.getCzechInt
-      );
+      arr.push(this.getReactInt, this.getVueInt, this.getAngularInt);
       this.chartData.datasets[0].data = arr;
     }
   }
