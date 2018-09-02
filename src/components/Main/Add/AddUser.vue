@@ -3,10 +3,10 @@
     <div class="form__title">
       Add a new user: <span>{{ newUser.name }}</span>
     </div>
-    <div class="form__controls-wrapper">
-      <div class="form__controls">
-        <div class="controls-stack">
-          <div class="wrapper-control types">
+    <div class="form__controls">
+      <div class="controls">
+        <div class="control-stack">
+          <div class="control-wrapper validation">
             <input
               type="text"
               v-model.trim="newUser.name"
@@ -14,7 +14,7 @@
               required
             />
           </div>
-          <div class="wrapper-control types">
+          <div class="control-wrapper validation">
             <input
               type="email"
               v-model.trim="newUser.email"
@@ -22,22 +22,22 @@
             />
           </div>
         </div>
-        <div class="controls-stack">
-          <div class="wrapper-control types">
+        <div class="control-stack">
+          <div class="control-wrapper">
             <select
-              class="form-control-select"
+              class="select-style"
               type="text"
               v-model="newUser.dev"
             >
               <option disabled value="">Framework</option>
-              <option>Vue</option>
-              <option>React</option>
+              <option>Vue.js</option>
+              <option>React.js</option>
               <option>Angular</option>
             </select>
           </div>
-          <div class="wrapper-control types">
+          <div class="control-wrapper">
             <select
-              class="form-control-select"
+              class="select-style"
               type="text"
               v-model="newUser.country"
               placeholder="Country"
@@ -50,18 +50,18 @@
             </select>
           </div>
         </div>
-        <div class="controls-stack">
-          <div class="wrapper-control">
+        <div class="control-stack">
+          <div class="control-wrapper">
             <input
-              class="id"
+              class="readonly"
               type="text"
               :placeholder="`Your ID: ${newUser.id}`"
               readonly
             />
           </div>
-          <div class="wrapper-control">
-            <div class="button">
-              <button type="button" class="editing" @click="saveNewUser">SAVE</button>
+          <div class="control-wrapper">
+            <div class="button-wrapper">
+              <button type="button" class="button" @click="saveNewUser">SAVE</button>
             </div>
           </div>
         </div>
@@ -73,22 +73,25 @@
 <script>
 export default {
   name: "MainAddUser",
+
   data() {
     return {
       newUser: {
+        id: "",
+        reg: "",
+        dev: "",
         name: "",
         email: "",
-        dev: "",
-        country: "",
-        id: "",
-        reg: ""
+        country: ""
       }
     };
   },
+
   mounted() {
-    this.newID();
-    this.date();
+    this.setId();
+    this.setDate();
   },
+
   methods: {
     saveNewUser() {
       if (this.newUser.name.length) {
@@ -96,10 +99,10 @@ export default {
         this.$router.push("/users");
       }
     },
-    newID() {
+    setId() {
       this.newUser.id = this.$store.getters.USERS.length;
     },
-    date() {
+    setDate() {
       this.newUser.reg = new Date().toLocaleDateString();
     }
   }
@@ -122,22 +125,53 @@ export default {
       margin-left: 10px;
     }
   }
-  &__controls-wrapper {
+  &__controls {
     width: 1402px;
     margin: 0 auto;
     border: 1px solid #ebedf8;
     border-radius: 4px;
-    .form__controls {
+    .controls {
       padding: 50px;
-      .form-control-select {
-        width: 214px;
-        height: 39px;
-      }
-      .controls-stack {
+      .control-stack {
         display: flex;
-        .wrapper-control {
+        .validation input:invalid {
+          border: 1px solid #0077ff;
+          border-radius: 4px;
           padding: 10px;
-          .id {
+          color: #8a96a0;
+          outline: none;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+        }
+        .validation input:valid {
+          border: 1px solid #ebedf8;
+          border-radius: 4px;
+          padding: 10px;
+          color: #8a96a0;
+          outline: none;
+          font-size: 15px;
+          letter-spacing: 0.5px;
+          &::placeholder {
+            color: #8a96a0;
+          }
+        }
+        .control-wrapper {
+          padding: 10px;
+          .select-style {
+            width: 214px;
+            height: 39px;
+            border: 1px solid #ebedf8;
+            border-radius: 4px;
+            padding: 10px;
+            color: #8a96a0;
+            outline: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            &::placeholder {
+              color: #8a96a0;
+            }
+          }
+          .readonly {
             color: #8a96a0;
             outline: none;
             font-size: 15px;
@@ -149,13 +183,13 @@ export default {
               color: #c0c5d2;
             }
           }
-          .button {
+          .button-wrapper {
             width: 214px;
             height: 39px;
             display: flex;
             align-items: center;
             justify-content: center;
-            .editing {
+            .button {
               display: flex;
               justify-content: center;
               align-items: center;
@@ -188,39 +222,6 @@ export default {
                 letter-spacing: 0.5px;
               }
             }
-          }
-        }
-        .types input:invalid {
-          border: 1px solid #0077ff;
-          border-radius: 4px;
-          padding: 10px;
-          color: #8a96a0;
-          outline: none;
-          font-size: 15px;
-          letter-spacing: 0.5px;
-        }
-        .types input:valid {
-          border: 1px solid #ebedf8;
-          border-radius: 4px;
-          padding: 10px;
-          color: #8a96a0;
-          outline: none;
-          font-size: 15px;
-          letter-spacing: 0.5px;
-          &::placeholder {
-            color: #8a96a0;
-          }
-        }
-        .types select {
-          border: 1px solid #ebedf8;
-          border-radius: 4px;
-          padding: 10px;
-          color: #8a96a0;
-          outline: none;
-          font-size: 15px;
-          letter-spacing: 0.5px;
-          &::placeholder {
-            color: #8a96a0;
           }
         }
       }

@@ -12,6 +12,7 @@
 <script>
 export default {
   name: "SidebarApp",
+
   components: {
     SidebarItem: () => import("./SidebarItem.vue")
   },

@@ -3,26 +3,42 @@
     <div class="form__title">
       Editing user:<span>{{ userName }}</span>
     </div>
-    <div class="form__controls-wrapper">
-      <div class="form__controls">
-        <div class="controls-stack">
-          <div class="wrapper-control">
-            <input class="form-control" type="text" v-model="userName"/>
+    <div class="form__controls">
+      <div class="controls">
+        <div class="control-stack">
+          <div class="control-wrapper">
+            <input
+              class="input-style"
+              type="text"
+              v-model="userName"
+            />
           </div>
-          <div class="wrapper-control">
-            <input class="form-control" type="text" v-model="userEmail"/>
+          <div class="control-wrapper">
+            <input
+              class="input-style"
+              type="text"
+              v-model="userEmail"
+            />
           </div>
         </div>
-      <div class="controls-stack">
-        <div class="wrapper-control">
-          <input class="form-control" type="text" v-model="userDev"/>
+      <div class="control-stack">
+        <div class="control-wrapper">
+          <input
+            class="input-style"
+            type="text"
+            v-model="userDev"
+          />
         </div>
-        <div class="wrapper-control">
-          <input class="form-control" type="text" v-model="userCountry"/>
+        <div class="control-wrapper">
+          <input
+            class="input-style"
+            type="text"
+            v-model="userCountry"
+          />
         </div>
       </div>
-      <div class="controls-stack">
-        <div class="wrapper-control">
+      <div class="control-stack">
+        <div class="control-wrapper">
           <input
             class="id"
             type="text"
@@ -30,8 +46,8 @@
             readonly
           />
         </div>
-        <div class="wrapper-control">
-          <div class="button">
+        <div class="control-wrapper">
+          <div class="status-wrapper">
             <div :class="{saved, editing}">SAVED</div>
           </div>
         </div>
@@ -44,66 +60,78 @@
 <script>
 export default {
   name: "MainAddUser",
+
   data() {
     return {
       saved: false,
       editing: true
     };
   },
+
   computed: {
-    id() {
+    getId() {
       return parseInt(this.$route.params.id, 10);
     },
     userName: {
       get() {
-        return this.$store.getters.USERS[this.id].name;
+        return this.$store.getters.USERS[this.getId].name;
       },
       set(value) {
         this.saved = true;
         this.editing = false;
-        this.$store.commit("UPDATE_NAME_USER", { value: value, id: this.id });
-        setTimeout(this.changeSaveStatus, 300);
+        this.$store.commit("UPDATE_NAME_USER", {
+          value: value,
+          id: this.getId
+        });
+        setTimeout(this.changeStatus, 300);
       }
     },
     userEmail: {
       get() {
-        return this.$store.getters.USERS[this.id].email;
+        return this.$store.getters.USERS[this.getId].email;
       },
       set(value) {
         this.saved = true;
         this.editing = false;
-        this.$store.commit("UPDATE_EMAIL_USER", { value: value, id: this.id });
-        setTimeout(this.changeSaveStatus, 300);
+        this.$store.commit("UPDATE_EMAIL_USER", {
+          value: value,
+          id: this.getId
+        });
+        setTimeout(this.changeStatus, 300);
       }
     },
     userDev: {
       get() {
-        return this.$store.getters.USERS[this.id].dev;
+        return this.$store.getters.USERS[this.getId].dev;
       },
       set(value) {
         this.saved = true;
         this.editing = false;
-        this.$store.commit("UPDATE_DEV_USER", { value: value, id: this.id });
-        setTimeout(this.changeSaveStatus, 300);
+        this.$store.commit("UPDATE_DEV_USER", {
+          value: value,
+          id: this.getId
+        });
+        setTimeout(this.changeStatus, 300);
       }
     },
     userCountry: {
       get() {
-        return this.$store.getters.USERS[this.id].country;
+        return this.$store.getters.USERS[this.getId].country;
       },
       set(value) {
         this.saved = true;
         this.editing = false;
         this.$store.commit("UPDATE_COUNTRY_USER", {
           value: value,
-          id: this.id
+          id: this.getId
         });
-        setTimeout(this.changeSaveStatus, 300);
+        setTimeout(this.changeStatus, 300);
       }
     }
   },
+
   methods: {
-    changeSaveStatus() {
+    changeStatus() {
       this.saved = false;
       this.editing = true;
     }
@@ -127,27 +155,27 @@ export default {
       margin-left: 10px;
     }
   }
-  &__controls-wrapper {
+  &__controls {
     width: 1402px;
     margin: 0 auto;
     border: 1px solid #ebedf8;
     border-radius: 4px;
-    .form__controls {
+    .controls {
       padding: 50px;
-      .form-control {
-        border: 1px solid #ebedf8;
-        border-radius: 4px;
-        color: #8a96a0;
-        padding: 10px;
-        outline: none;
-        font-size: 15px;
-        letter-spacing: 0.5px;
-      }
-      .controls-stack {
+      .control-stack {
         display: flex;
-        .wrapper-control {
+        .control-wrapper {
           padding: 10px;
-          .button {
+          .input-style {
+            border: 1px solid #ebedf8;
+            border-radius: 4px;
+            color: #8a96a0;
+            padding: 10px;
+            outline: none;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+          }
+          .status-wrapper {
             width: 214px;
             height: 38px;
             display: flex;

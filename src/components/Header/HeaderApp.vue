@@ -9,6 +9,7 @@
 <script>
 export default {
   name: "HeaderApp",
+
   components: {
     HeaderLogo: () => import("./HeaderLogo.vue"),
     HeaderNav: () => import("./HeaderNav.vue"),

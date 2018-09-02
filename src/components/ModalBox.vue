@@ -17,6 +17,7 @@
 <script>
 export default {
   name: "ModalBox",
+
   components: {
     HeaderApp: () => import("../components/Header/HeaderApp.vue"),
     SidebarApp: () => import("../components/Sidebar/SidebarApp.vue"),

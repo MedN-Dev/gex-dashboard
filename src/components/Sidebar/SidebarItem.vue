@@ -8,6 +8,7 @@
 <script>
 export default {
   name: "SidebarItem",
+
   props: {
     icon: {
       type: String,
