@@ -1,25 +1,26 @@
 <template>
-  <div class="overview-header">
-    <div class="overview-header__title">
+  <div class="header">
+    <div class="header__title">
       Data overview
     </div>
-    <div class="overview-header__left">
-      <MainOverviewHeaderProgress/>
+    <div class="header__left">
+      <HeaderProgress/>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MainOverviewHeader",
+  name: "HeaderOverview",
+
   components: {
-    MainOverviewHeaderProgress: () => import("./HeaderProgress.vue")
+    HeaderProgress: () => import("./HeaderProgress.vue")
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.overview-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;

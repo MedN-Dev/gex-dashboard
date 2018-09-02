@@ -22,7 +22,7 @@
         <router-link :to="`/edit/${user.id}`">
           <button
             type="button"
-            class="btn btn-edit"
+            class="button edit"
           >Edit
           </button>
         </router-link>
@@ -30,7 +30,7 @@
       <td class="item">
         <button
           type="button"
-          class="btn btn-del"
+          class="button delete"
           @click="deleteUser(user)"
         >Delete
         </button>
@@ -42,13 +42,15 @@
 
 <script>
 export default {
-  name: "MainOverviewContentUsers",
+  name: "ContentUsers",
+
   props: {
     users: {
       type: Array,
       required: true
     }
   },
+
   methods: {
     deleteUser(user) {
       this.$emit("deleteUser", user);
@@ -77,7 +79,7 @@ export default {
   .item {
     padding: 15px 0;
     font-size: 15px;
-    .btn {
+    .button {
       display: flex;
       align-items: center;
       padding: 5px 12px;
@@ -92,13 +94,13 @@ export default {
     a {
       text-decoration: none;
     }
-    .btn-edit {
+    .edit {
       background-color: #0077ff;
       &:hover {
         box-shadow: 0px 0px 10px 0px #9ea7fc;
       }
     }
-    .btn-del {
+    .delete {
       background-color: #f0166d;
       &:hover {
         box-shadow: 0px 0px 6px 0px #f0166d;

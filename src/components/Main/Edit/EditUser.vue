@@ -56,7 +56,7 @@
 
 <script>
 export default {
-  name: "MainAddUser",
+  name: "EditUser",
 
   data() {
     return {

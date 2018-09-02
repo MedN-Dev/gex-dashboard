@@ -4,13 +4,13 @@
       <div class="title">
         All users in system
       </div>
-      <MainOverviewHeaderProgress/>
+      <HeaderProgress/>
     </div>
     <div class="users__list">
-      <div class="users__list-wrapper">
+      <div class="list">
         <div class="table">
-          <MainOverviewContentUsers
-            :users="this.$store.getters.USERS"
+          <ContentUsers
+            :users="getUsers"
             @deleteUser="deleteUser"/>
         </div>
       </div>
@@ -20,11 +20,19 @@
 
 <script>
 export default {
-  name: "MainUsers",
+  name: "UserList",
+
   components: {
-    MainOverviewContentUsers: () => import("../Overview/Content/ContentUsers.vue"),
-    MainOverviewHeaderProgress: () => import("../Overview/Header/HeaderProgress.vue")
+    ContentUsers: () => import("../Overview/Content/ContentUsers.vue"),
+    HeaderProgress: () => import("../Overview/Header/HeaderProgress.vue")
   },
+
+  computed: {
+    getUsers() {
+      return this.$store.getters.USERS;
+    }
+  },
+
   methods: {
     deleteUser(user) {
       this.$store.dispatch("DELETE_USER", user);
@@ -52,7 +60,7 @@ export default {
   &__list {
     width: 1402px;
     margin: 0 auto;
-    &-wrapper {
+    .list {
       border: 1px solid #ebedf8;
       border-radius: 4px;
       margin-bottom: 40px;

@@ -2,7 +2,7 @@
   <div class="chart">
     <div class="container">
       <canvas ref="canvas" width="1200" height="450"></canvas>
-      <div v-show="showInt">Length: {{ getUsers.length }}</div>
+      <div v-show="showLength">Length: {{ getUsers.length }}</div>
     </div>
   </div>
 </template>
@@ -12,11 +12,13 @@ import { Line, mixins } from "vue-chartjs";
 const { reactiveData } = mixins;
 
 export default {
-  name: "MainOverviewContentChartRegDevChart",
+  name: "ContentChartCountries",
   extends: Line,
   mixins: [reactiveData],
+
   data() {
     return {
+      showLength: false,
       chartData: {
         labels: ["USA", "Thailand", "Russia", "Czech"],
         datasets: [
@@ -28,7 +30,7 @@ export default {
           }
         ]
       },
-      options: {
+      chartOptions: {
         responsive: true,
         maintainAspectRatio: true,
         scales: {
@@ -54,18 +56,20 @@ export default {
             bottom: 10
           }
         }
-      },
-      showInt: false
+      }
     };
   },
+
   mounted() {
     this.getCountiesArr();
-    this.renderChart(this.chartData, this.options);
+    this.renderChart(this.chartData, this.chartOptions);
   },
+
   updated() {
     this.getCountiesArr();
-    this.renderChart(this.chartData, this.options);
+    this.renderChart(this.chartData, this.chartOptions);
   },
+
   computed: {
     getUsers() {
       return this.$store.getters.USERS;
@@ -107,6 +111,7 @@ export default {
       return array.length;
     }
   },
+
   methods: {
     getCountiesArr() {
       let arr = [];

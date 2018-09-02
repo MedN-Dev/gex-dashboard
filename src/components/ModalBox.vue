@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/reset.css";
+@import "../assets/reset/reset.css";
 
 .modal {
   display: flex;

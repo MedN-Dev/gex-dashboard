@@ -1,17 +1,17 @@
 <template>
   <div class="overview">
-    <MainOverviewHeader/>
-    <MainOverviewContent/>
-
+    <HeaderOverview/>
+    <ContentOverview/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MainOverview",
+  name: "OverviewData",
+
   components: {
-    MainOverviewHeader: () => import("./Header/HeaderOverview.vue"),
-    MainOverviewContent: () => import("./Content/ContentOverview.vue")
+    HeaderOverview: () => import("./Header/HeaderOverview.vue"),
+    ContentOverview: () => import("./Content/ContentOverview.vue")
   }
 };
 </script>

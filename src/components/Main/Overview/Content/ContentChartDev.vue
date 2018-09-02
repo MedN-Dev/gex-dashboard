@@ -1,12 +1,11 @@
 <template>
   <div class="chart">
-    <div class="chart__country">
+    <div class="chart__countries">
       <div class="container">
         <canvas ref="canvas" width="600" height="400"></canvas>
-        <div v-show="showInt">Framework: {{ getVueInt }}</div>
       </div>
     </div>
-    <div class="chart__total">
+    <div class="chart__title">
       <div class="names">
         <div class="name">Vue.js</div>
         <div class="name">React.js</div>
@@ -26,9 +25,10 @@ import { Pie, mixins } from "vue-chartjs";
 const { reactiveData } = mixins;
 
 export default {
-  name: "MainOverviewContentChartRegDevChart",
+  name: "ContentChartDev",
   extends: Pie,
   mixins: [reactiveData],
+
   data() {
     return {
       chartData: {
@@ -42,7 +42,7 @@ export default {
           }
         ]
       },
-      options: {
+      optionsData: {
         responsive: true,
         maintainAspectRatio: true,
         scales: {
@@ -54,22 +54,24 @@ export default {
           padding: {
             left: 0,
             right: 0,
-            top: 20,
-            bottom: 20
+            top: 10,
+            bottom: 10
           }
         }
-      },
-      showInt: false
+      }
     };
   },
+
   mounted() {
     this.getDevArr();
-    this.renderChart(this.chartData, this.options);
+    this.renderChart(this.chartData, this.optionsData);
   },
+
   updated() {
     this.getDevArr();
-    this.renderChart(this.chartData, this.options);
+    this.renderChart(this.chartData, this.optionsData);
   },
+
   computed: {
     getUsers() {
       return this.$store.getters.USERS;
@@ -102,6 +104,7 @@ export default {
       return array.length;
     }
   },
+
   methods: {
     getDevArr() {
       let arr = [];
@@ -115,12 +118,12 @@ export default {
 <style lang="scss" scoped>
 .chart {
   display: flex;
-  &__country {
+  &__countries {
     width: 408px;
     border-right: 1px solid #ebedf8;
     border-top: 1px solid #ebedf8;
   }
-  &__total {
+  &__title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,9 +141,6 @@ export default {
     .values {
       .value {
         margin-bottom: 15px;
-        font-size: 15px;
-        color: #1a173b;
-        font-weight: bold;
       }
     }
   }

@@ -72,7 +72,7 @@
 
 <script>
 export default {
-  name: "MainAddUser",
+  name: "AddUser",
 
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
-  <div class="overview-content">
-    <div class="overview-content__charts">
+  <div class="content">
+    <div class="content__charts">
       <ContentChartCountries/>
       <ContentChartDev/>
     </div>
@@ -10,7 +10,8 @@
 
 <script>
 export default {
-  name: "MainOverviewContent",
+  name: "ContentOverview",
+
   components: {
     ContentChartCountries: () => import("./ContentChartCountries.vue"),
     ContentChartDev: () => import("./ContentChartDev.vue"),
@@ -20,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.overview-content {
+.content {
   width: 1401px;
   border-radius: 4px;
   background-color: #ffffff;
