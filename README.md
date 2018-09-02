@@ -1,8 +1,7 @@
 # Dashboard Web Application
 >Note. This application is in alpha phase. However, it is workable and safe.
 
-Single-page application with [Vue](https://vuejs.org/), [Vuex](https://vuex
-.vuejs.org/) and [Vue Router](https://router.vuejs.org/). This application is
+Single-page application with [Vue](https://vuejs.org/), [Vuex](https://vuex.vuejs.org/) and [Vue Router](https://router.vuejs.org/). This application is
  for only full-hd resolution. Non-responsive.
 
 ## Demo
