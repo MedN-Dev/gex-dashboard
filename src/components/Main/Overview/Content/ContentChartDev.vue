@@ -1,7 +1,23 @@
 <template>
-  <div class="container">
-    <canvas ref="canvas" width="600" height="400"></canvas>
-    <div v-show="showInt">Length: {{ getUsers.length }}</div>
+  <div class="chart">
+    <div class="chart__country">
+      <div class="container">
+        <canvas ref="canvas" width="600" height="400"></canvas>
+        <div v-show="showInt">Framework: {{ getVueInt }}</div>
+      </div>
+    </div>
+    <div class="chart__total">
+      <div class="names">
+        <div class="name">Vue.js</div>
+        <div class="name">React.js</div>
+        <div class="name">Angular</div>
+      </div>
+      <div class="values">
+        <div class="value">{{ getVueInt }}</div>
+        <div class="value">{{ getReactInt }}</div>
+        <div class="value">{{ getAngularInt }}</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,7 +32,7 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ["React", "Vue", "Angular"],
+        labels: ["React.js", "Vue.js", "Angular"],
         datasets: [
           {
             label: "users",
@@ -38,8 +54,8 @@ export default {
           padding: {
             left: 0,
             right: 0,
-            top: 10,
-            bottom: 10
+            top: 20,
+            bottom: 20
           }
         }
       },
@@ -61,7 +77,7 @@ export default {
     getReactInt() {
       let array = [];
       this.getUsers.forEach(item => {
-        if (item.dev === "React") {
+        if (item.dev === "React.js") {
           array.push(item.dev);
         }
       });
@@ -70,7 +86,7 @@ export default {
     getVueInt() {
       let array = [];
       this.getUsers.forEach(item => {
-        if (item.dev === "Vue") {
+        if (item.dev === "Vue.js") {
           array.push(item.dev);
         }
       });
@@ -95,3 +111,38 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.chart {
+  display: flex;
+  &__country {
+    width: 408px;
+    border-right: 1px solid #ebedf8;
+    border-top: 1px solid #ebedf8;
+  }
+  &__total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 269px;
+    border-right: 1px solid #ebedf8;
+    border-top: 1px solid #ebedf8;
+    .names {
+      margin-right: 25px;
+      .name {
+        margin-bottom: 15px;
+        color: #8a96a0;
+        font-size: 15px;
+      }
+    }
+    .values {
+      .value {
+        margin-bottom: 15px;
+        font-size: 15px;
+        color: #1a173b;
+        font-weight: bold;
+      }
+    }
+  }
+}
+</style>

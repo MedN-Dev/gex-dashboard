@@ -1,10 +1,10 @@
 <template>
   <div class="overview-content">
     <div class="overview-content__charts">
-      <MainOverviewContentChartRegDev/>
-      <MainOverviewContentChartCountry/>
+      <ContentChartCountries/>
+      <ContentChartDev/>
     </div>
-    <MainOverviewContentUserList/>
+    <ContentUsersWrapper/>
   </div>
 </template>
 
@@ -12,12 +12,9 @@
 export default {
   name: "MainOverviewContent",
   components: {
-    MainOverviewContentChartRegDev: () =>
-      import("./ContentChartContriesWrapper.vue"),
-    MainOverviewContentChartCountry: () =>
-      import("./ContentChartDevWrapper.vue"),
-    MainOverviewContentUserList: () =>
-      import("./ContentUsersWrapper.vue")
+    ContentChartCountries: () => import("./ContentChartCountries.vue"),
+    ContentChartDev: () => import("./ContentChartDev.vue"),
+    ContentUsersWrapper: () => import("./ContentUsersWrapper.vue")
   }
 };
 </script>

@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <canvas ref="canvas" width="1200" height="450"></canvas>
-    <div v-show="showInt">Length: {{ getUsers.length }}</div>
+  <div class="chart">
+    <div class="container">
+      <canvas ref="canvas" width="1200" height="450"></canvas>
+      <div v-show="showInt">Length: {{ getUsers.length }}</div>
+    </div>
   </div>
 </template>
 
@@ -119,3 +121,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.chart {
+  width: 720px;
+  border-right: 1px solid #ebedf8;
+  border-left: 1px solid #ebedf8;
+  border-top: 1px solid #ebedf8;
+}
+</style>

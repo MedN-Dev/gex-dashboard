@@ -57,12 +57,12 @@ export default {
       background-color: #0077ff;
       transition: width 0.6s ease;
     }
-    .progress-text {
-      color: #8a96a0;
-      b {
-        color: #1a173b;
-      }
-    }
+  }
+}
+.progress-text {
+  color: #8a96a0;
+  b {
+    color: #1a173b;
   }
 }
 </style>
