@@ -20,12 +20,12 @@ export default {
 .chart {
   display: flex;
   &__country {
-    width: 549px;
+    width: 408px;
     border-right: 1px solid #ebedf8;
     border-top: 1px solid #ebedf8;
   }
   &__total {
-    width: 301px;
+    width: 269px;
     border-right: 1px solid #ebedf8;
     border-top: 1px solid #ebedf8;
   }

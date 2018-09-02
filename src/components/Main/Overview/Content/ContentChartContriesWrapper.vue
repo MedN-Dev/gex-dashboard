@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .chart {
-  width: 549px;
+  width: 720px;
   border-right: 1px solid #ebedf8;
   border-left: 1px solid #ebedf8;
   border-top: 1px solid #ebedf8;

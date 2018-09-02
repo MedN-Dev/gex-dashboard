@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <canvas ref="canvas" width="900" height="400"></canvas>
+    <canvas ref="canvas" width="600" height="400"></canvas>
     <div v-show="showInt">Length: {{ getUsers.length }}</div>
   </div>
 </template>
@@ -30,26 +30,16 @@ export default {
         responsive: true,
         maintainAspectRatio: true,
         scales: {
-          yAxes: [
-            {
-              ticks: { fontColor: "#8a96a0" },
-              gridLines: { display: false }
-            }
-          ],
-          xAxes: [
-            {
-              ticks: { fontColor: "#8a96a0" },
-              gridLines: { display: false }
-            }
-          ]
+          yAxes: { display: false },
+          xAxes: { display: false }
         },
         legend: { display: false },
         layout: {
           padding: {
             left: 0,
             right: 0,
-            top: 0,
-            bottom: 0
+            top: 10,
+            bottom: 10
           }
         }
       },

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <canvas ref="canvas" width="900" height="400"></canvas>
+    <canvas ref="canvas" width="1200" height="450"></canvas>
     <div v-show="showInt">Length: {{ getUsers.length }}</div>
   </div>
 </template>
@@ -47,9 +47,9 @@ export default {
         layout: {
           padding: {
             left: 10,
-            right: 30,
-            top: 40,
-            bottom: 0
+            right: 25,
+            top: 30,
+            bottom: 10
           }
         }
       },
