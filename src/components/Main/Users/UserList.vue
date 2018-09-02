@@ -37,14 +37,13 @@ export default {
 .users {
   &__title {
     display: flex;
+    justify-content: space-between;
     width: 1402px;
+    height: 90px;
     margin: 0 auto;
     .title {
       display: flex;
       align-items: center;
-      width: 931px;
-      height: 90px;
-
       font-size: 21px;
       letter-spacing: 0.14px;
       color: #1a173b;

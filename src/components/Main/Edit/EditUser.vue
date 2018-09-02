@@ -39,12 +39,9 @@
       </div>
       <div class="control-stack">
         <div class="control-wrapper">
-          <input
-            class="id"
-            type="text"
-            :placeholder="`Your ID: ${id}`"
-            readonly
-          />
+          <div class="button-wrapper">
+            <button class="button" @click="deleteUser">DELETE</button>
+          </div>
         </div>
         <div class="control-wrapper">
           <div class="status-wrapper">
@@ -71,6 +68,9 @@ export default {
   computed: {
     getId() {
       return parseInt(this.$route.params.id, 10);
+    },
+    getUser() {
+      return this.$store.getters.USERS[this.getId];
     },
     userName: {
       get() {
@@ -134,6 +134,10 @@ export default {
     changeStatus() {
       this.saved = false;
       this.editing = true;
+    },
+    deleteUser() {
+      this.$store.dispatch("DELETE_USER", this.getUser);
+      this.$router.push("/users");
     }
   }
 };
@@ -221,6 +225,45 @@ export default {
             padding: 10px;
             &::placeholder {
               color: #c0c5d2;
+            }
+          }
+          .button-wrapper {
+            width: 214px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            .button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 214px;
+              height: 30px;
+              border-radius: 4px;
+              background: repeating-linear-gradient(
+                45deg,
+                white,
+                white 10px,
+                #f0166d 10px,
+                #f0166d 20px
+              );
+              color: white;
+              font-size: 15px;
+              letter-spacing: 0.5px;
+              border: none;
+              cursor: pointer;
+              &:hover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 214px;
+                height: 30px;
+                border-radius: 4px;
+                background: #f0166d;
+                color: white;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                border: none;
+              }
             }
           }
         }
