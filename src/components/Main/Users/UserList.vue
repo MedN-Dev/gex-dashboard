@@ -22,8 +22,8 @@
 export default {
   name: "MainUsers",
   components: {
-    MainOverviewContentUsers: () => import("./MainOverviewContentUsers.vue"),
-    MainOverviewHeaderProgress: () => import("./MainOverviewHeaderProgress.vue")
+    MainOverviewContentUsers: () => import("../Overview/Content/ContentUsers.vue"),
+    MainOverviewHeaderProgress: () => import("../Overview/Header/HeaderProgress.vue")
   },
   methods: {
     deleteUser(user) {

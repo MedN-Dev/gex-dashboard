@@ -19,9 +19,9 @@
 <script>
 export default {
   components: {
-    TheHeader: () => import("./components/Header/TheHeader.vue"),
-    TheSidebar: () => import("./components/Sidebar/TheSidebar.vue"),
-    TheMain: () => import("./components/Main/TheMain.vue")
+    TheHeader: () => import("./components/Header/HeaderApp.vue"),
+    TheSidebar: () => import("./components/Sidebar/SidebarApp.vue"),
+    TheMain: () => import("./components/Main/MainApp.vue")
   },
   data() {
     return {

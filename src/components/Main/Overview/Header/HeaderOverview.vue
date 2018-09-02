@@ -13,7 +13,7 @@
 export default {
   name: "MainOverviewHeader",
   components: {
-    MainOverviewHeaderProgress: () => import("./MainOverviewHeaderProgress.vue")
+    MainOverviewHeaderProgress: () => import("./HeaderProgress.vue")
   }
 };
 </script>

@@ -10,8 +10,8 @@
 export default {
   name: "MainOverview",
   components: {
-    MainOverviewHeader: () => import("./MainOverviewHeader.vue"),
-    MainOverviewContent: () => import("./MainOverviewContent.vue")
+    MainOverviewHeader: () => import("./Header/HeaderOverview.vue"),
+    MainOverviewContent: () => import("./Content/ContentOverview.vue")
   }
 };
 </script>

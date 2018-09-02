@@ -37,9 +37,9 @@
 export default {
   name: "MainOverviewContentUserList",
   components: {
-    MainOverviewContentUsers: () => import("./MainOverviewContentUsers.vue"),
+    MainOverviewContentUsers: () => import("./ContentUsers.vue"),
     MainOverviewFooterPagination: () =>
-      import("./MainOverviewContentPagination.vue")
+      import("./ContentUsersPagination.vue")
   },
   data() {
     return {

@@ -13,11 +13,11 @@ export default {
   name: "MainOverviewContent",
   components: {
     MainOverviewContentChartRegDev: () =>
-      import("./MainOverviewContentChartRegDev.vue"),
+      import("./ContentChartContriesWrapper.vue"),
     MainOverviewContentChartCountry: () =>
-      import("./MainOverviewContentChartCountry.vue"),
+      import("./ContentChartDevWrapper.vue"),
     MainOverviewContentUserList: () =>
-      import("./MainOverviewContentUserList.vue")
+      import("./ContentUsersWrapper.vue")
   }
 };
 </script>

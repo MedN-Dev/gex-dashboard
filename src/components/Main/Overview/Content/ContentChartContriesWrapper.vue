@@ -9,7 +9,7 @@ export default {
   name: "MainOverviewContentChartRegDev",
   components: {
     MainOverviewContentChartRegDevChart: () =>
-      import("./MainOverviewContentChartRegDevChart.vue")
+      import("./ContentChartCountries.vue")
   }
 };
 </script>

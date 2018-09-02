@@ -29,7 +29,6 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: true,
-        labels: { fontColor: "red" },
         scales: {
           yAxes: [
             {
@@ -61,7 +60,7 @@ export default {
     this.getCountiesArr();
     this.renderChart(this.chartData, this.options);
   },
-  beforeUpdate() {
+  updated() {
     this.getCountiesArr();
     this.renderChart(this.chartData, this.options);
   },

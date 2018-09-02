@@ -8,19 +8,19 @@ export default new Router({
   routes: [
     {
       path: "/",
-      component: () => import("../components/Main/MainOverview.vue")
+      component: () => import("../components/Main/Overview/OverviewData.vue")
     },
     {
       path: "/users",
-      component: () => import("../components/Main/MainUsers.vue")
+      component: () => import("../components/Main/Users/UserList.vue")
     },
     {
       path: "/add",
-      component: () => import("../components/Main/MainAddUser.vue")
+      component: () => import("../components/Main/Add/AddUser.vue")
     },
     {
       path: "/edit/:id",
-      component: () => import("../components/Main/MainEditUser.vue")
+      component: () => import("../components/Main/Edit/EditUser.vue")
     }
   ]
 });
