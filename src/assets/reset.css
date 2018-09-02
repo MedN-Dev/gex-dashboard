@@ -16,6 +16,11 @@ body {
     format("woff2");
 }
 
+#app {
+  margin: 50px auto 10px auto;
+  width: 1580px;
+}
+
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
