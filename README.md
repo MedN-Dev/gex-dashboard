@@ -21,5 +21,4 @@ Compatible with every evergreen browser.
 core strength is on visual and UI Design.
 
 ## License
-Licensed under [MIT](https://github
-.com/heysafronov/gex-dashboard/blob/master/LICENSE).
+Licensed under [MIT](https://github.com/heysafronov/gex-dashboard/blob/master/LICENSE).
