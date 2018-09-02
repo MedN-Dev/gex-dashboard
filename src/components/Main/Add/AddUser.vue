@@ -100,7 +100,7 @@ export default {
       }
     },
     setId() {
-      this.newUser.id = this.$store.getters.USERS.length;
+      this.newUser.id = this.$store.getters.USERS.length + 100;
     },
     setDate() {
       this.newUser.reg = new Date().toLocaleDateString();
