@@ -8,7 +8,7 @@ Single-page application with [Vue](https://vuejs.org/), [Vuex](https://vuex.vuej
 Demo is available on this [page](https://heysafronov.github.io/gex-dashboard/dist/#/).
 
 ## Screenshot
-<img src="https://raw.githubusercontent.com/heysafronov/fogga-kanban/master/src/assets/img/fogga-kanban.png?token=Af7pByf3cC7Vasjfva4eILl-erDQT-BCks5bZUx0wA%3D%3D">
+<img src="https://raw.githubusercontent.com/heysafronov/gex-dashboard/master/src/assets/img/gex-dashboard.png?token=Af7pB0zXXUDhIhyWdQXyKlj84lOnAhTDks5blTl3wA%3D%3D">
 
 ## Back-end support
 Using [Firebase](https://firebase.google.com/) as simple backend.
