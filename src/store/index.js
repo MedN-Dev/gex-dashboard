@@ -6,8 +6,6 @@ import starter from "./modules/starter.js";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  // ------------------------удалить в prod
-  strict: true,
   state: {},
   getters: {},
   actions: {},
