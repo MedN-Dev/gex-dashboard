@@ -4,7 +4,7 @@ import Router from "vue-router";
 Vue.use(Router);
 
 export default new Router({
-  linkActiveClass: "nav__link_active",
+  linkActiveClass: "nav__link-active",
   routes: [
     {
       path: "/",

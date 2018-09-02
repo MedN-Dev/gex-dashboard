@@ -1,6 +1,6 @@
 <template>
-  <div class="button-wrapper">
-    <button type="button" class="button-wrapper__btn" @click="getUsers">
+  <div class="wrapper">
+    <button type="button" class="button" @click="getUsers">
       Reset users
     </button>
   </div>
@@ -9,6 +9,7 @@
 <script>
 export default {
   name: "HeaderButton",
+
   methods: {
     getUsers() {
       this.$store.dispatch("GET_USERS");
@@ -19,11 +20,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.button-wrapper {
+.wrapper {
   width: 705px;
   display: flex;
   justify-content: flex-end;
-  &__btn {
+  .button {
     display: flex;
     align-items: center;
     padding: 9px 15px;

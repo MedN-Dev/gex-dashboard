@@ -31,7 +31,7 @@ export default {
     &:hover {
       color: #0077ff;
     }
-    &_active {
+    &-active {
       border-bottom: 2px solid #0077ff;
       color: #0077ff;
     }

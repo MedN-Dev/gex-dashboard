@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar__bs"></div>
+    <div class="empty"></div>
     <SidebarItem :icon="icons.dashboard" :stat="status"/>
     <SidebarItem :icon="icons.forum"/>
     <SidebarItem :icon="icons.cloud"/>
@@ -11,20 +11,21 @@
 
 <script>
 export default {
-  name: "TheSidebar",
+  name: "SidebarApp",
   components: {
     SidebarItem: () => import("./SidebarItem.vue")
   },
+
   data() {
     return {
+      status: "active",
       icons: {
-        settings: "settings",
         email: "email",
         cloud: "cloud",
         forum: "forum",
+        settings: "settings",
         dashboard: "dashboard"
-      },
-      status: "active"
+      }
     };
   }
 };
@@ -37,9 +38,9 @@ export default {
   height: auto;
   background-color: white;
   width: 85px;
-  box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.2);
   border-right: 1px solid #ebedf8;
-  &__bs {
+  .empty {
     height: 50px;
   }
 }

@@ -1,6 +1,6 @@
 <template>
-  <div class="sidebar__item" :class="stat" @click="handleClick">
-    <span v-if="errorLog" class="sidebar__item_error">not working</span>
+  <div class="item" :class="stat" @click="handleClick">
+    <span v-if="errorLog" class="item-error">not working</span>
     <i v-else class="material-icons">{{ icon }}</i>
   </div>
 </template>
@@ -17,11 +17,13 @@ export default {
       type: String
     }
   },
+
   data() {
     return {
       errorLog: false
     };
   },
+
   methods: {
     handleClick() {
       if (!this.stat) {
@@ -33,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sidebar__item {
+.item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +45,7 @@ export default {
   width: 82px;
   height: 85px;
   cursor: pointer;
-  &_error {
+  .item-error {
     font-size: 9px;
     color: white;
     background-color: #0077ff;
@@ -54,6 +56,7 @@ export default {
     color: #0077ff;
   }
 }
+
 .active {
   border-right: 3px solid #0077ff;
   color: #0077ff;
