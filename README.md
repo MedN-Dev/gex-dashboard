@@ -1,8 +1,7 @@
 # Dashboard Web Application
 >Note. This application is in alpha phase. However, it is workable and safe.
 
-Single-page application with [Vue](https://vuejs.org/), [Vuex](https://vuex.vuejs.org/) and [Vue Router](https://router.vuejs.org/). This application is
- for only full-hd resolution. Non-responsive.
+Single-page application with [Vue](https://vuejs.org/), [Vuex](https://vuex.vuejs.org/) and [Vue Router](https://router.vuejs.org/). This application is for only HD+ resolution. Non-responsive.
 
 ## Demo
 Demo is available on this [page](https://heysafronov.github.io/gex-dashboard/dist/#/).
