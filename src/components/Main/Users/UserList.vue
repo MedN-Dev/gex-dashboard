@@ -46,7 +46,7 @@ export default {
   &__title {
     display: flex;
     justify-content: space-between;
-    width: 1402px;
+    width: 1114px;
     height: 90px;
     margin: 0 auto;
     .title {
@@ -58,7 +58,7 @@ export default {
     }
   }
   &__list {
-    width: 1402px;
+    width: 1114px;
     margin: 0 auto;
     .list {
       border: 1px solid #ebedf8;

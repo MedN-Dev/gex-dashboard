@@ -16,7 +16,7 @@ export default {
 .nav {
   display: flex;
   justify-content: flex-end;
-  width: 745px;
+  width: 670px;
   &__link {
     display: flex;
     justify-content: center;

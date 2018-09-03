@@ -24,7 +24,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1402px;
+  width: 1114px;
   height: 90px;
   margin: 0 auto;
   &__title {

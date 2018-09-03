@@ -148,7 +148,7 @@ export default {
   &__title {
     display: flex;
     align-items: center;
-    width: 1402px;
+    width: 1114px;
     height: 90px;
     margin: 0 auto;
     font-size: 21px;
@@ -160,7 +160,7 @@ export default {
     }
   }
   &__controls {
-    width: 1402px;
+    width: 1114px;
     margin: 0 auto;
     border: 1px solid #ebedf8;
     border-radius: 4px;

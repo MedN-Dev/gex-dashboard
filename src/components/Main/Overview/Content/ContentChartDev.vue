@@ -119,7 +119,7 @@ export default {
 .chart {
   display: flex;
   &__countries {
-    width: 408px;
+    width: 300px;
     border-right: 1px solid #ebedf8;
     border-top: 1px solid #ebedf8;
   }
@@ -127,9 +127,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 269px;
+    width: 253px;
     border-right: 1px solid #ebedf8;
     border-top: 1px solid #ebedf8;
+    border-top-right-radius: 4px;
     .names {
       margin-right: 25px;
       .name {

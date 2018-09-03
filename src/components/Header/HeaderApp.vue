@@ -23,7 +23,7 @@ export default {
   display: flex;
   align-items: center;
   background-color: white;
-  width: 1580px;
+  width: 1270px;
   height: 70px;
   border-bottom: 1px solid #ebedf8;
   box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.3);

@@ -90,6 +90,8 @@ export default {
 .content {
   &__users {
     border: 1px solid #ebedf8;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     .users {
       display: flex;
       flex-direction: column;
@@ -152,7 +154,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 1402px;
+      width: 1114px;
       margin: 0 auto;
       height: 110px;
       .info {

@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  width: 1401px;
+  width: 1114px;
   border-radius: 4px;
   background-color: #ffffff;
   margin: 0 auto;

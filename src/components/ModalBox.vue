@@ -4,7 +4,7 @@
       <div class="modal__text">This app is for full-hd resolution 😎</div>
       <button class="modal__btn" type="button" @click="showModal">Open</button>
     </div>
-    <div v-else key="app">
+    <div v-else class="wrapper" key="app">
       <HeaderApp/>
       <div class="main-wrapper">
         <SidebarApp/>
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/reset/reset.css";
+@import "../assets/reset/index.css";
 
 .modal {
   display: flex;
@@ -86,7 +86,10 @@ export default {
   }
 }
 
-.main-wrapper {
-  display: flex;
+.wrapper {
+  width: 1270px;
+  .main-wrapper {
+    display: flex;
+  }
 }
 </style>

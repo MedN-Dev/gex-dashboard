@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 705px;
+  width: 515px;
   display: flex;
   justify-content: flex-end;
   .button {
@@ -36,6 +36,7 @@ export default {
     cursor: pointer;
     outline: none;
     letter-spacing: 0.5px;
+    margin-right: 35px;
     &:hover {
       box-shadow: 0px 0px 10px 0px #9ea7fc;
     }

@@ -129,9 +129,10 @@ export default {
 
 <style lang="scss" scoped>
 .chart {
-  width: 720px;
+  width: 557px;
   border-right: 1px solid #ebedf8;
   border-left: 1px solid #ebedf8;
   border-top: 1px solid #ebedf8;
+  border-top-left-radius: 4px;
 }
 </style>
