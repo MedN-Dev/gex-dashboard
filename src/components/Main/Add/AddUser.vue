@@ -135,6 +135,7 @@ export default {
       .control-stack {
         display: flex;
         .validation input:invalid {
+          width: 192px;
           border: 1px solid #0077ff;
           border-radius: 4px;
           padding: 10px;
@@ -144,6 +145,7 @@ export default {
           letter-spacing: 0.5px;
         }
         .validation input:valid {
+          width: 192px;
           border: 1px solid #ebedf8;
           border-radius: 4px;
           padding: 10px;
@@ -172,6 +174,7 @@ export default {
             }
           }
           .readonly {
+            width: 192px;
             color: #8a96a0;
             outline: none;
             font-size: 15px;

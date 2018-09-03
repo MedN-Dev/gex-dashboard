@@ -88,6 +88,7 @@ export default {
 
 .wrapper {
   width: 1270px;
+  margin: 0 auto;
   .main-wrapper {
     display: flex;
   }

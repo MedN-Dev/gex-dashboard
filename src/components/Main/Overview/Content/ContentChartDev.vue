@@ -2,7 +2,7 @@
   <div class="chart">
     <div class="chart__countries">
       <div class="container">
-        <canvas ref="canvas" width="600" height="400"></canvas>
+        <canvas ref="canvas" width="500" height="400"></canvas>
       </div>
     </div>
     <div class="chart__title">
@@ -54,8 +54,8 @@ export default {
           padding: {
             left: 0,
             right: 0,
-            top: 10,
-            bottom: 10
+            top: 30,
+            bottom: 0
           }
         }
       }

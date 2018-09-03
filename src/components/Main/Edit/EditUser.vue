@@ -171,6 +171,7 @@ export default {
         .control-wrapper {
           padding: 10px;
           .input-style {
+            width: 192px;
             border: 1px solid #ebedf8;
             border-radius: 4px;
             color: #8a96a0;

@@ -1,7 +1,7 @@
 <template>
   <div class="chart">
     <div class="container">
-      <canvas ref="canvas" width="1200" height="450"></canvas>
+      <canvas ref="canvas" width="1200" height="550"></canvas>
       <div v-show="showLength">Length: {{ getUsers.length }}</div>
     </div>
   </div>
@@ -53,7 +53,7 @@ export default {
             left: 10,
             right: 25,
             top: 30,
-            bottom: 10
+            bottom: 0
           }
         }
       }
