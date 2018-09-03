@@ -1,7 +1,7 @@
 <template>
   <transition appear name="modal">
     <div v-if="modal" class="modal" key="modal">
-      <div class="modal__text">This app is for full-hd resolution 😎</div>
+      <div class="modal__text">This app is for HD+ resolution 😎</div>
       <button class="modal__btn" type="button" @click="showModal">Open</button>
     </div>
     <div v-else class="wrapper" key="app">
